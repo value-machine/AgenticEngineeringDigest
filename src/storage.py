@@ -72,11 +72,18 @@ class Storage:
         self.conn.commit()
         return new
 
-    def get_undigested_entries(self) -> list[dict]:
-        """Return all entries not yet included in a digest."""
-        rows = self.conn.execute(
-            "SELECT * FROM entries WHERE digest_id IS NULL ORDER BY published DESC"
-        ).fetchall()
+    def get_undigested_entries(self, max_age_days: int | None = None) -> list[dict]:
+        """Return entries not yet included in a digest, optionally filtered by age."""
+        if max_age_days is not None:
+            cutoff = datetime.now(timezone.utc) - __import__("datetime").timedelta(days=max_age_days)
+            rows = self.conn.execute(
+                "SELECT * FROM entries WHERE digest_id IS NULL AND published >= ? ORDER BY published DESC",
+                (cutoff.isoformat(),),
+            ).fetchall()
+        else:
+            rows = self.conn.execute(
+                "SELECT * FROM entries WHERE digest_id IS NULL ORDER BY published DESC"
+            ).fetchall()
         return [dict(r) for r in rows]
 
     def mark_digested(self, entry_ids: list[str], digest_id: str) -> None:

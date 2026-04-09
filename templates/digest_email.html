@@ -16,7 +16,7 @@
             Agentic AI Digest
           </h1>
           <p style="margin:6px 0 0; font-size:14px; color:#94a3b8;">
-            {{ date }} &middot; {{ total_entries }} items &middot; ID: {{ digest_id }}
+            {{ total_entries }} items &middot; {{ date_range_from }} &ndash; {{ date_range_to }}
           </p>
         </td></tr>
 
@@ -40,6 +40,9 @@
               {% for item in items %}
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; margin-bottom:6px;">
                 <tr><td style="padding:10px 14px;">
+                  {% if item.display_date %}
+                  <span style="color:#94a3b8; font-size:12px; font-weight:600; margin-right:4px;">{{ item.display_date }}</span>
+                  {% endif %}
                   <a href="{{ item.url }}" target="_blank" rel="noopener"
                      style="color:#2563eb; text-decoration:none; font-weight:500; font-size:14px;">
                     {{ item.title }}

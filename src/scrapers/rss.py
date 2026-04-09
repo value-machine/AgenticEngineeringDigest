@@ -87,11 +87,22 @@ class RssScraper(Scraper):
 
     @staticmethod
     def _clean_summary(item: Any) -> str:
-        raw = item.get("summary") or item.get("description") or ""
-        # Strip HTML tags for a plain-text summary
+        # Prefer full content over the short summary/description
+        raw = ""
+        for field in ("content", "content:encoded"):
+            content_list = item.get(field)
+            if content_list:
+                if isinstance(content_list, list) and content_list:
+                    raw = content_list[0].get("value", "")
+                elif isinstance(content_list, str):
+                    raw = content_list
+                if raw:
+                    break
+        if not raw:
+            raw = item.get("summary") or item.get("description") or ""
         from bs4 import BeautifulSoup
         text = BeautifulSoup(raw, "html.parser").get_text(separator=" ", strip=True)
-        # Truncate to ~500 chars
-        if len(text) > 500:
-            text = text[:497] + "..."
+        # Keep up to 1500 chars for richer context
+        if len(text) > 1500:
+            text = text[:1497] + "..."
         return text

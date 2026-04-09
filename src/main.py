@@ -19,12 +19,21 @@ from src.emailer import send_digest_email
 
 console = Console(force_terminal=True)
 CONFIG_PATH = Path(__file__).resolve().parent.parent / "config" / "sources.json"
+SETTINGS_PATH = Path(__file__).resolve().parent.parent / "config" / "settings.json"
 
 
 def load_sources(path: Path = CONFIG_PATH) -> list[dict]:
     with open(path, encoding="utf-8") as f:
         data = json.load(f)
     return [s for s in data["sources"] if s.get("enabled", False)]
+
+
+def load_settings() -> dict:
+    try:
+        with open(SETTINGS_PATH, encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
 
 
 async def scrape_all(sources: list[dict]) -> list[Entry]:
@@ -90,13 +99,15 @@ def run(no_digest: bool, no_scrape: bool, send_email: bool) -> None:
             return
 
     # --- Digest phase ---
-    undigested = store.get_undigested_entries()
+    settings = load_settings()
+    max_age = settings.get("schedule", {}).get("max_age_days", 7)
+    undigested = store.get_undigested_entries(max_age_days=max_age)
     if not undigested:
-        console.print("\n[dim]No new entries to compile. Digest skipped.[/dim]")
+        console.print(f"\n[dim]No entries within the last {max_age} days. Digest skipped.[/dim]")
         store.close()
         return
 
-    console.print(f"\nCompiling digest from [cyan]{len(undigested)}[/cyan] entries...")
+    console.print(f"\nCompiling digest from [cyan]{len(undigested)}[/cyan] entries (last {max_age} days)...")
     result = generate_digest(undigested)
 
     if result:
@@ -129,8 +140,10 @@ def send_digest(html_path: str | None) -> None:
         html_content = Path(html_path).read_text(encoding="utf-8")
         date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     else:
+        settings = load_settings()
+        max_age = settings.get("schedule", {}).get("max_age_days", 7)
         store = Storage()
-        undigested = store.get_undigested_entries()
+        undigested = store.get_undigested_entries(max_age_days=max_age)
         store.close()
         if not undigested:
             console.print("[dim]No undigested entries. Nothing to send.[/dim]")

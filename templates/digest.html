@@ -47,6 +47,10 @@
     color: var(--accent); text-decoration: none; font-weight: 500;
   }
   .entry a:hover { text-decoration: underline; }
+  .entry .entry-date {
+    color: var(--muted); font-size: 0.75rem; font-weight: 600;
+    margin-right: 0.4rem;
+  }
   .entry .summary {
     color: var(--muted); font-size: 0.9rem; margin-top: 0.25rem;
   }
@@ -60,7 +64,7 @@
 <body>
   <header>
     <h1>Agentic AI Digest</h1>
-    <p class="meta">{{ date }} &middot; {{ total_entries }} items &middot; ID: {{ digest_id }}</p>
+    <p class="meta">{{ total_entries }} items &middot; {{ date_range_from }} &ndash; {{ date_range_to }}</p>
   </header>
 
   {% for section in sections %}
@@ -71,6 +75,7 @@
       <h3>{{ source_name }}</h3>
       {% for item in items %}
       <div class="entry">
+        {% if item.display_date %}<span class="entry-date">{{ item.display_date }}</span>{% endif %}
         <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>
         {% if item.summary %}
         <div class="summary">{{ item.summary }}</div>

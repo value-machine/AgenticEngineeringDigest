@@ -13,6 +13,77 @@ TEMPLATES_DIR = Path(__file__).resolve().parent.parent / "templates"
 OUTPUT_DIR = Path(__file__).resolve().parent.parent / "output"
 
 
+def _format_published(raw: str) -> str:
+    """Parse an ISO date string and return a short display date like 'Apr 7'."""
+    try:
+        dt = datetime.fromisoformat(raw)
+        return dt.strftime("%b %-d")
+    except Exception:
+        try:
+            # Windows strftime doesn't support %-d
+            dt = datetime.fromisoformat(raw)
+            return dt.strftime("%b %d").replace(" 0", " ")
+        except Exception:
+            return ""
+
+
+def _compute_date_range(entries: list[dict]) -> tuple[str, str]:
+    """Return (oldest_date, newest_date) as display strings from entry published fields."""
+    dates = []
+    for e in entries:
+        try:
+            dt = datetime.fromisoformat(e["published"])
+            # Normalize to UTC-aware for consistent comparison
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            dates.append(dt)
+        except Exception:
+            pass
+    if not dates:
+        now = datetime.now(timezone.utc)
+        return now.strftime("%Y-%m-%d"), now.strftime("%Y-%m-%d")
+    oldest = min(dates)
+    newest = max(dates)
+    return oldest.strftime("%b %d, %Y").replace(" 0", " "), newest.strftime("%b %d, %Y").replace(" 0", " ")
+
+
+def _prepare_sections(entries: list[dict]) -> list[dict]:
+    """Group entries by category and source, adding formatted dates."""
+    # Add display date to each entry
+    for entry in entries:
+        entry["display_date"] = _format_published(entry.get("published", ""))
+
+    by_category: dict[str, list[dict]] = defaultdict(list)
+    for entry in entries:
+        by_category[entry["category"]].append(entry)
+
+    category_labels = {
+        "newsletter": "Newsletters",
+        "podcast": "Podcasts",
+        "community": "Community (Reddit)",
+        "paper_tracking": "Papers",
+        "github_tracking": "GitHub Trending",
+        "youtube": "YouTube",
+        "twitter": "X / Twitter",
+    }
+
+    sections: list[dict] = []
+    for cat_key, label in category_labels.items():
+        items = by_category.get(cat_key, [])
+        if items:
+            by_source: dict[str, list[dict]] = defaultdict(list)
+            for item in items:
+                by_source[item["source_name"]].append(item)
+            sections.append({
+                "label": label,
+                "key": cat_key,
+                "sources": dict(by_source),
+                "count": len(items),
+            })
+
+    return sections
+
+
 def generate_digest(
     entries: list[dict],
     output_dir: Path = OUTPUT_DIR,
@@ -28,50 +99,24 @@ def generate_digest(
     date_str = now.strftime("%Y-%m-%d")
     time_str = now.strftime("%H%M")
 
-    # Group entries by category
-    by_category: dict[str, list[dict]] = defaultdict(list)
-    for entry in entries:
-        by_category[entry["category"]].append(entry)
-
-    # Category display order and labels
-    category_labels = {
-        "newsletter": "Newsletters",
-        "podcast": "Podcasts",
-        "community": "Community (Reddit)",
-        "paper_tracking": "Papers",
-        "github_tracking": "GitHub Trending",
-        "youtube": "YouTube",
-        "twitter": "X / Twitter",
-    }
-
-    sections: list[dict] = []
-    for cat_key, label in category_labels.items():
-        items = by_category.get(cat_key, [])
-        if items:
-            # Group by source within category
-            by_source: dict[str, list[dict]] = defaultdict(list)
-            for item in items:
-                by_source[item["source_name"]].append(item)
-            sections.append({
-                "label": label,
-                "key": cat_key,
-                "sources": dict(by_source),
-                "count": len(items),
-            })
+    sections = _prepare_sections(entries)
+    oldest, newest = _compute_date_range(entries)
 
     context = {
         "digest_id": digest_id,
         "date": date_str,
         "generated_at": now.isoformat(),
         "total_entries": len(entries),
+        "date_range_from": oldest,
+        "date_range_to": newest,
         "sections": sections,
     }
 
     # --- Markdown ---
     md_lines = [
-        f"# Agentic AI Digest — {date_str}",
+        f"# Agentic AI Digest -- {date_str}",
         f"",
-        f"> {len(entries)} new items across {len(sections)} categories",
+        f"> {len(entries)} items from **{oldest}** to **{newest}**",
         f"> Generated: {now.strftime('%Y-%m-%d %H:%M UTC')}",
         "",
     ]
@@ -86,9 +131,10 @@ def generate_digest(
                 title = item["title"]
                 url = item["url"]
                 summary = item.get("summary", "")
-                md_lines.append(f"- **[{title}]({url})**")
+                pub_date = item.get("display_date", "")
+                date_prefix = f"[{pub_date}] " if pub_date else ""
+                md_lines.append(f"- {date_prefix}**[{title}]({url})**")
                 if summary:
-                    # Indent summary under the bullet
                     md_lines.append(f"  {summary}")
                 md_lines.append("")
         md_lines.append("---")
@@ -104,7 +150,6 @@ def generate_digest(
         template = env.get_template("digest.html")
         html_content = template.render(**context)
     except Exception:
-        # Fallback: wrap markdown in minimal HTML
         html_content = f"""<!DOCTYPE html>
 <html><head><meta charset="utf-8"><title>Digest {date_str}</title>
 <style>
@@ -128,39 +173,16 @@ def render_email_html(entries: list[dict]) -> str:
     now = datetime.now(timezone.utc)
     digest_id = uuid.uuid4().hex[:8]
 
-    by_category: dict[str, list[dict]] = defaultdict(list)
-    for entry in entries:
-        by_category[entry["category"]].append(entry)
-
-    category_labels = {
-        "newsletter": "Newsletters",
-        "podcast": "Podcasts",
-        "community": "Community (Reddit)",
-        "paper_tracking": "Papers",
-        "github_tracking": "GitHub Trending",
-        "youtube": "YouTube",
-        "twitter": "X / Twitter",
-    }
-
-    sections: list[dict] = []
-    for cat_key, label in category_labels.items():
-        items = by_category.get(cat_key, [])
-        if items:
-            by_source: dict[str, list[dict]] = defaultdict(list)
-            for item in items:
-                by_source[item["source_name"]].append(item)
-            sections.append({
-                "label": label,
-                "key": cat_key,
-                "sources": dict(by_source),
-                "count": len(items),
-            })
+    sections = _prepare_sections(entries)
+    oldest, newest = _compute_date_range(entries)
 
     context = {
         "digest_id": digest_id,
         "date": now.strftime("%Y-%m-%d"),
         "generated_at": now.isoformat(),
         "total_entries": len(entries),
+        "date_range_from": oldest,
+        "date_range_to": newest,
         "sections": sections,
     }
 
