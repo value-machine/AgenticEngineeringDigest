@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip --version)",
+      "Bash(python -m pip install -e . --quiet)",
+      "Bash(python -m src.main settings)"
+    ]
+  }
+}

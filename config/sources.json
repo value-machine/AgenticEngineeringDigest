@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "title": "Agentic AI News Sources",
+    "updated": "2026-04-09",
+    "description": "Curated list of newsletters, podcasts, communities, tools, and automation platforms for staying current on agentic AI engineering."
+  },
+  "sources": [
+    {
+      "category": "newsletter",
+      "name": "Latent Space",
+      "description": "Daily AI engineering newsletter + weekly podcast by swyx and Alessio Fanelli.",
+      "url": "https://www.latent.space/",
+      "feed_url": "https://www.latent.space/feed",
+      "scrape_method": "rss",
+      "enabled": true
+    },
+    {
+      "category": "newsletter",
+      "name": "TLDR AI",
+      "description": "5-minute weekday digest of AI headlines, model releases, and agent framework updates.",
+      "url": "https://tldr.tech/ai",
+      "feed_url": "https://tldr.tech/rss",
+      "scrape_method": "rss",
+      "enabled": true
+    },
+    {
+      "category": "newsletter",
+      "name": "The Rundown AI",
+      "description": "Daily AI news digest with business context.",
+      "url": "https://www.therundown.ai/",
+      "feed_url": "https://rss.beehiiv.com/feeds/2R3C6Bt5wj.xml",
+      "scrape_method": "rss",
+      "enabled": true
+    },
+    {
+      "category": "newsletter",
+      "name": "AlphaSignal",
+      "description": "AI-curated technical digest surfacing trending papers and GitHub repos.",
+      "url": "https://alphasignalai.substack.com/",
+      "feed_url": "https://alphasignalai.substack.com/feed",
+      "scrape_method": "rss",
+      "enabled": true
+    },
+    {
+      "category": "newsletter",
+      "name": "The Batch",
+      "description": "Andrew Ng's weekly commentary with authoritative AI research analysis.",
+      "url": "https://www.deeplearning.ai/the-batch/",
+      "feed_url": null,
+      "scrape_method": "rss",
+      "enabled": false,
+      "_note": "No RSS feed available; email-only newsletter"
+    },
+    {
+      "category": "newsletter",
+      "name": "Import AI",
+      "description": "Insider-grade research and policy analysis from Jack Clark.",
+      "url": "https://jack-clark.net/",
+      "feed_url": "https://importai.substack.com/feed",
+      "scrape_method": "rss",
+      "enabled": true
+    },
+    {
+      "category": "newsletter",
+      "name": "Ben's Bites",
+      "description": "Twice-weekly deep dives for AI builders and founders.",
+      "url": "https://www.bensbites.com/",
+      "feed_url": "https://www.bensbites.com/feed",
+      "scrape_method": "rss",
+      "enabled": true
+    },
+    {
+      "category": "newsletter",
+      "name": "Davis Summarizes Papers",
+      "description": "Weekly review of all ML arXiv submissions, highlighting 10-20 standouts.",
+      "url": "https://dblalock.substack.com/",
+      "feed_url": "https://dblalock.substack.com/feed",
+      "scrape_method": "rss",
+      "enabled": true
+    },
+    {
+      "category": "podcast",
+      "name": "Latent Space Podcast",
+      "description": "Top AI engineering podcast with interviews from OpenAI, Anthropic, LangChain founders.",
+      "url": "https://open.spotify.com/show/2p7zZVwVF6Yk0Zsb4QmT7t",
+      "feed_url": "https://api.substack.com/feed/podcast/1084089.rss",
+      "scrape_method": "rss",
+      "enabled": true
+    },
+    {
+      "category": "podcast",
+      "name": "The Cognitive Revolution",
+      "description": "Long-form interviews on autonomous coding, agent evals, and safety.",
+      "url": "https://www.cognitiverevolution.ai/",
+      "feed_url": "https://feeds.megaphone.fm/RINTP3108857801",
+      "scrape_method": "rss",
+      "enabled": true
+    },
+    {
+      "category": "podcast",
+      "name": "Gradient Dissent",
+      "description": "Weights & Biases podcast, increasingly agent-focused.",
+      "url": "https://wandb.ai/site/resources/podcast/",
+      "feed_url": "https://feeds.captivate.fm/gradient-dissent/",
+      "scrape_method": "rss",
+      "enabled": true
+    },
+    {
+      "category": "community",
+      "name": "r/AI_Agents",
+      "description": "Primary Reddit hub for agent builders discussing LangGraph, CrewAI, AutoGen.",
+      "url": "https://www.reddit.com/r/AI_Agents/",
+      "feed_url": "https://www.reddit.com/r/AI_Agents/top/.rss?t=day",
+      "scrape_method": "rss",
+      "enabled": true
+    },
+    {
+      "category": "community",
+      "name": "r/LocalLLaMA",
+      "description": "Essential for open-source model developments powering local agent deployments.",
+      "url": "https://www.reddit.com/r/LocalLLaMA/",
+      "feed_url": "https://www.reddit.com/r/LocalLLaMA/top/.rss?t=day",
+      "scrape_method": "rss",
+      "enabled": true
+    },
+    {
+      "category": "youtube",
+      "name": "AI Jason",
+      "description": "Step-by-step agent building tutorials.",
+      "url": "https://www.youtube.com/@AIJasonZ",
+      "feed_url": null,
+      "scrape_method": "youtube",
+      "youtube_channel_id": null,
+      "enabled": false,
+      "_note": "Enable after adding channel_id (found via page source or YouTube API)"
+    },
+    {
+      "category": "youtube",
+      "name": "Matthew Berman",
+      "description": "Thorough hands-on testing of new models and agent capabilities.",
+      "url": "https://www.youtube.com/@matthew_berman",
+      "feed_url": null,
+      "scrape_method": "youtube",
+      "youtube_channel_id": null,
+      "enabled": false,
+      "_note": "Enable after adding channel_id"
+    },
+    {
+      "category": "paper_tracking",
+      "name": "HF Daily Papers",
+      "description": "Community-curated trending ML papers.",
+      "url": "https://huggingface.co/papers",
+      "feed_url": null,
+      "scrape_method": "web_hf_papers",
+      "enabled": true
+    },
+    {
+      "category": "github_tracking",
+      "name": "GitHub Trending AI",
+      "description": "GitHub trending repos filtered for AI/ML topics.",
+      "url": "https://github.com/trending",
+      "feed_url": null,
+      "scrape_method": "web_github_trending",
+      "enabled": true
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+name: Agentic AI Digest
+
+on:
+  schedule:
+    - cron: "0 7 * * *"     # Daily scrape at 07:00 UTC
+    - cron: "15 7 * * 1"    # Weekly digest + email: Monday 07:15 UTC
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Run mode"
+        type: choice
+        options:
+          - scrape-only
+          - full-digest
+        default: full-digest
+
+permissions:
+  contents: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install .
+
+      - name: Restore database
+        uses: actions/cache@v4
+        with:
+          path: data/digest.db
+          key: digest-db-${{ github.run_id }}
+          restore-keys: digest-db-
+
+      # Copy settings with secrets injected (overrides local config)
+      - name: Configure settings
+        run: |
+          cat > config/settings.json << 'SETTINGS'
+          {
+            "email": {
+              "enabled": true,
+              "recipients": ["${{ secrets.DIGEST_RECIPIENT }}"],
+              "from": "onboarding@resend.dev",
+              "resend_api_key": "${{ secrets.RESEND_API_KEY }}"
+            },
+            "schedule": {
+              "scrape_frequency": "daily",
+              "digest_frequency": "weekly",
+              "digest_day": "Monday",
+              "digest_time_utc": "07:15"
+            }
+          }
+          SETTINGS
+
+      # Daily: scrape and store (no digest)
+      - name: Scrape all sources
+        run: python -m src.main run --no-digest
+
+      # Weekly (Monday) or manual full-digest: compile + email
+      - name: Generate and email weekly digest
+        if: >-
+          github.event.schedule == '15 7 * * 1' ||
+          (github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'full-digest')
+        run: python -m src.main run --no-scrape --email
+
+      - name: Commit outputs
+        run: |
+          git config user.name "digest-bot"
+          git config user.email "digest-bot@users.noreply.github.com"
+          git add output/ data/
+          git diff --cached --quiet || git commit -m "digest: $(date -u +%Y-%m-%d)"
+          git push
