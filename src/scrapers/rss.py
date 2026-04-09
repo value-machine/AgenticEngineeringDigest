@@ -22,11 +22,18 @@ class RssScraper(Scraper):
             return []
 
         headers = {
-            "User-Agent": "AgenticDigest/0.1 (+https://github.com/agentic-engineers-digest)",
+            "User-Agent": "Mozilla/5.0 (compatible; Feedfetcher-Google; +https://github.com/value-machine/AgenticEngineeringDigest)",
+            "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
         }
-        # Reddit requires a non-generic UA
+        # Reddit requires a descriptive UA
         if "reddit.com" in feed_url:
             headers["User-Agent"] = "AgenticDigest:0.1 (by /u/agentic-digest-bot)"
+        # Substack blocks non-browser UAs from cloud runners — use a browser-like UA
+        elif "substack.com" in feed_url or "api.substack.com" in feed_url:
+            headers["User-Agent"] = (
+                "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            )
 
         async with httpx.AsyncClient(follow_redirects=True, timeout=20) as client:
             try:
