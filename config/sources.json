@@ -110,7 +110,7 @@
       "name": "r/AI_Agents",
       "description": "Primary Reddit hub for agent builders discussing LangGraph, CrewAI, AutoGen.",
       "url": "https://www.reddit.com/r/AI_Agents/",
-      "feed_url": "https://www.reddit.com/r/AI_Agents/top/.rss?t=day",
+      "feed_url": "https://old.reddit.com/r/AI_Agents/top/.rss?t=day",
       "scrape_method": "rss",
       "enabled": true
     },
@@ -119,7 +119,7 @@
       "name": "r/LocalLLaMA",
       "description": "Essential for open-source model developments powering local agent deployments.",
       "url": "https://www.reddit.com/r/LocalLLaMA/",
-      "feed_url": "https://www.reddit.com/r/LocalLLaMA/top/.rss?t=day",
+      "feed_url": "https://old.reddit.com/r/LocalLLaMA/top/.rss?t=day",
       "scrape_method": "rss",
       "enabled": true
     },

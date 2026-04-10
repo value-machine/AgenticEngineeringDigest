@@ -27,24 +27,20 @@ def _format_published(raw: str) -> str:
             return ""
 
 
-def _compute_date_range(entries: list[dict]) -> tuple[str, str]:
-    """Return (oldest_date, newest_date) as display strings from entry published fields."""
-    dates = []
-    for e in entries:
-        try:
-            dt = datetime.fromisoformat(e["published"])
-            # Normalize to UTC-aware for consistent comparison
-            if dt.tzinfo is None:
-                dt = dt.replace(tzinfo=timezone.utc)
-            dates.append(dt)
-        except Exception:
-            pass
-    if not dates:
-        now = datetime.now(timezone.utc)
-        return now.strftime("%Y-%m-%d"), now.strftime("%Y-%m-%d")
-    oldest = min(dates)
-    newest = max(dates)
-    return oldest.strftime("%b %d, %Y").replace(" 0", " "), newest.strftime("%b %d, %Y").replace(" 0", " ")
+def _compute_date_range(entries: list[dict], window_days: int = 7) -> tuple[str, str]:
+    """Return (window_start, window_end) display strings based on the digest window period.
+
+    Uses the configured look-back window (default 7 days) rather than the min/max of
+    entry publication dates, so a weekly digest always shows the full week range even
+    when all new entries happen to land on the same day.
+    """
+    from datetime import timedelta
+    now = datetime.now(timezone.utc)
+    oldest = now - timedelta(days=window_days)
+    return (
+        oldest.strftime("%b %d, %Y").replace(" 0", " "),
+        now.strftime("%b %d, %Y").replace(" 0", " "),
+    )
 
 
 def _prepare_sections(entries: list[dict]) -> list[dict]:
@@ -87,6 +83,7 @@ def _prepare_sections(entries: list[dict]) -> list[dict]:
 def generate_digest(
     entries: list[dict],
     output_dir: Path = OUTPUT_DIR,
+    window_days: int = 7,
 ) -> tuple[str, Path, Path] | None:
     """Generate Markdown and HTML digest files. Returns (digest_id, md_path, html_path) or None."""
     if not entries:
@@ -100,7 +97,7 @@ def generate_digest(
     time_str = now.strftime("%H%M")
 
     sections = _prepare_sections(entries)
-    oldest, newest = _compute_date_range(entries)
+    oldest, newest = _compute_date_range(entries, window_days=window_days)
 
     context = {
         "digest_id": digest_id,
@@ -168,13 +165,13 @@ li {{ margin-bottom: .5rem; }}
     return digest_id, md_path, html_path
 
 
-def render_email_html(entries: list[dict]) -> str:
+def render_email_html(entries: list[dict], window_days: int = 7) -> str:
     """Render entries as email-optimized HTML (inline styles, no CSS variables)."""
     now = datetime.now(timezone.utc)
     digest_id = uuid.uuid4().hex[:8]
 
     sections = _prepare_sections(entries)
-    oldest, newest = _compute_date_range(entries)
+    oldest, newest = _compute_date_range(entries, window_days=window_days)
 
     context = {
         "digest_id": digest_id,

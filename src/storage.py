@@ -103,6 +103,15 @@ class Storage:
         )
         self.conn.commit()
 
+    def digest_sent_today(self) -> bool:
+        """Return True if a digest was already recorded today (UTC)."""
+        today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        count = self.conn.execute(
+            "SELECT COUNT(*) FROM digests WHERE created_at >= ?",
+            (f"{today}T00:00:00+00:00",),
+        ).fetchone()[0]
+        return count > 0
+
     def stats(self) -> dict:
         total = self.conn.execute("SELECT COUNT(*) FROM entries").fetchone()[0]
         undigested = self.conn.execute(

@@ -74,7 +74,8 @@ def cli() -> None:
 @click.option("--no-digest", is_flag=True, help="Scrape only, don't generate a digest.")
 @click.option("--no-scrape", is_flag=True, help="Skip scraping, generate digest from accumulated entries.")
 @click.option("--email", "send_email", is_flag=True, help="Email the digest after generating.")
-def run(no_digest: bool, no_scrape: bool, send_email: bool) -> None:
+@click.option("--force", is_flag=True, help="Generate and send even if a digest was already sent today.")
+def run(no_digest: bool, no_scrape: bool, send_email: bool, force: bool) -> None:
     """Scrape sources, generate a digest, and optionally email it."""
     if no_digest and no_scrape:
         console.print("[red]Cannot use --no-digest and --no-scrape together.[/red]")
@@ -101,6 +102,12 @@ def run(no_digest: bool, no_scrape: bool, send_email: bool) -> None:
     # --- Digest phase ---
     settings = load_settings()
     max_age = settings.get("schedule", {}).get("max_age_days", 7)
+
+    if not force and store.digest_sent_today():
+        console.print("\n[yellow]A digest was already sent today — skipping. Use --force to override.[/yellow]")
+        store.close()
+        return
+
     undigested = store.get_undigested_entries(max_age_days=max_age)
     if not undigested:
         console.print(f"\n[dim]No entries within the last {max_age} days. Digest skipped.[/dim]")
@@ -108,7 +115,7 @@ def run(no_digest: bool, no_scrape: bool, send_email: bool) -> None:
         return
 
     console.print(f"\nCompiling digest from [cyan]{len(undigested)}[/cyan] entries (last {max_age} days)...")
-    result = generate_digest(undigested)
+    result = generate_digest(undigested, window_days=max_age)
 
     if result:
         digest_id, md_path, html_path = result
@@ -123,7 +130,7 @@ def run(no_digest: bool, no_scrape: bool, send_email: bool) -> None:
         if send_email:
             console.print("\nSending email digest...")
             date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-            email_html = render_email_html(undigested)
+            email_html = render_email_html(undigested, window_days=max_age)
             send_digest_email(
                 email_html,
                 subject=f"Agentic AI Weekly Digest -- {date_str}",
