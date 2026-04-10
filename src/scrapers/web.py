@@ -33,23 +33,23 @@ class HfPapersScraper(Scraper):
         soup = BeautifulSoup(resp.text, "html.parser")
         entries: list[Entry] = []
 
-        # HF papers page has article elements with paper links
+        # HF papers page: title is in h3 > a, image link has no text
         for article in soup.select("article")[:20]:
-            link_el = article.select_one("a[href*='/papers/']")
-            if not link_el:
+            title_el = article.select_one("h3 a")
+            if not title_el:
                 continue
 
-            href = link_el.get("href", "")
+            href = title_el.get("href", "")
             if not href.startswith("http"):
                 href = f"https://huggingface.co{href}"
 
-            title = link_el.get_text(strip=True) or "(untitled)"
+            title = title_el.get_text(strip=True)
+            if not title:
+                continue  # skip if genuinely no title text
 
-            # Look for summary/description text
-            summary_el = article.select_one("p")
-            summary = summary_el.get_text(strip=True) if summary_el else ""
-            if len(summary) > 500:
-                summary = summary[:497] + "..."
+            # Listing page has no abstract; use arXiv ID as hint
+            arxiv_id = href.split("/papers/")[-1] if "/papers/" in href else ""
+            summary = f"arXiv:{arxiv_id}" if arxiv_id else ""
 
             entry_id = hashlib.sha256(href.encode()).hexdigest()[:16]
             entries.append(Entry(
