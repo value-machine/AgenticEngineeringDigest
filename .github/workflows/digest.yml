@@ -45,7 +45,7 @@ jobs:
             "email": {
               "enabled": true,
               "recipients": ["${{ secrets.DIGEST_RECIPIENT }}"],
-              "from": "onboarding@resend.dev",
+              "from": "digest@tmi.one",
               "resend_api_key": "${{ secrets.RESEND_API_KEY }}"
             },
             "schedule": {
