@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentic AI Digest — 2026-08-24</title>
+<style>
+  :root {
+    --bg: #fafafa; --fg: #1a1a1a; --muted: #6b7280; --accent: #2563eb;
+    --border: #e5e7eb; --card-bg: #ffffff; --tag-bg: #eff6ff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f172a; --fg: #e2e8f0; --muted: #94a3b8; --accent: #60a5fa;
+      --border: #334155; --card-bg: #1e293b; --tag-bg: #1e3a5f;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem;
+    line-height: 1.65;
+  }
+  header { border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 2rem; }
+  header h1 { font-size: 1.75rem; font-weight: 700; }
+  .meta { color: var(--muted); font-size: 0.9rem; margin-top: 0.25rem; }
+  .section { margin-bottom: 2.5rem; }
+  .section h2 {
+    font-size: 1.25rem; font-weight: 600; color: var(--accent);
+    margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;
+  }
+  .section h2 .count {
+    background: var(--tag-bg); color: var(--accent);
+    font-size: 0.8rem; padding: 0.15rem 0.5rem; border-radius: 999px;
+  }
+  .source-group { margin-bottom: 1.5rem; }
+  .source-group h3 {
+    font-size: 1rem; font-weight: 600; color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .entry {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 0.5rem;
+  }
+  .entry a {
+    color: var(--accent); text-decoration: none; font-weight: 500;
+  }
+  .entry a:hover { text-decoration: underline; }
+  .entry .entry-date {
+    color: var(--muted); font-size: 0.75rem; font-weight: 600;
+    margin-right: 0.4rem;
+  }
+  .entry .summary {
+    color: var(--muted); font-size: 0.9rem; margin-top: 0.25rem;
+  }
+  footer {
+    border-top: 1px solid var(--border); padding-top: 1rem;
+    margin-top: 2rem; color: var(--muted); font-size: 0.8rem;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Agentic AI Digest</h1>
+    <p class="meta">198 items &middot; Aug 17, 2026 &ndash; Aug 24, 2026</p>
+  </header>
+
+  
+  <div class="section">
+    <h2>Newsletters <span class="count">23</span></h2>
+    
+    <div class="source-group">
+      <h3>Latent Space</h3>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://www.latent.space/p/ainews-10-worse-100x-cheaper-10000x" target="_blank" rel="noopener">[AINews] 10% worse, 100x cheaper, 10000x faster: Why Simulation is taking over</a>
+        
+        <div class="summary">By AI standards today is a pretty quiet Friday, so it’s time to take a step back and reflect on what is really going on. If you read our 2025 reading list , and followed our coverage of Z.ai GLM , understood the Poolside pivot , been following our AI for Science themes , and tuned in to today’s Simile pod , you not only are one of the biggest readers of Latent Space, you will probably also arrive at this mental model: Every year since 2022, one more component of the pipeline that produces machine intelligence has flipped from human-made to model-made. Not gradually, and not evenly — each flip has a patient zero, a paper or product where the synthetic version first became load-bearing at a frontier lab, and from there on, the future is simply here but not yet productionized. And if you squint, what we used to call “synthetic data” and “synthetic rubrics” and “AI researcher” and “end to end RL environments” is just increasingly ambitious human simulation - 10% worse, but 100x cheaper and 10,000x faster. Stage 1: The reward signal (2022) The first thing to go synthetic was, counterintuitively, the judge. InstructGPT established the now-canonical trick: collect human preferences once, train a reward model , and let the policy optimize against the model rather than the humans. From the policy’s point of view, the thing dispensing approval was already an LLM. Constitutional AI pushed further and had the AI critique itself against a set of principles (RLAIF), and Lee et al. later...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://www.latent.space/p/attention-interface" target="_blank" rel="noopener">The Evolution of the Agent Harness</a>
+        
+        <div class="summary">Sometime around Christmas 2025, AI engineers noticed a change in agents. They started to work! It’s hard to pin down exactly why. Maybe we finally had holiday downtime to try the newest agents with the newest models. Maybe the models had crossed some capability threshold . Maybe the wrappers around the models had matured. What I’ll argue in this post is that it was the confluence of the last two. The model and the harness improving together and then their curves of improvement crossing at the right moment. And that dynamic helps to explain what comes next: models keep absorbing the harness into their weights, engineers keep deleting what got absorbed, and what remains is a harness for human attention rather than for the model. Lukasz Kaiser, one of the people who invented the Transformer, said on “Unsupervised Learning” in June: “The change last winter, last Christmas — it’s a little hard to pin down. I mean, the harness changed and a little post-training changed and then new pre-trained models came… but it felt like a big jump which is not that easy to pin down what did it.” The answer to “What happened?” isn’t solely in the model weights. It’s in the system that grew up around the weights. The answer is in the agent harness. Think back to November 2022, when ChatGPT was the most advanced AI tool. The only capability at its disposal was next-token prediction and some Reinforcement Learning from Human Feedback (RLHF) that allowed it to act like a helpful assistant. No tool...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://www.latent.space/p/simile" target="_blank" rel="noopener">Simulation: the new Scaling Law — Joon Sung Park, Simile AI</a>
+        
+        <div class="summary">When we first dicsussed the Summer of Simulative AI in 2024 we knew it would be a brief summer, but it has recently come back with a vengeance with SimGym in April and now Simile AI’s $2B Series B , backed by GreenOaks and Index Ventures with prominent backers like Fei-Fei Li and Andrej Karpathy, running tens of millions of simulations for Fortune 100 clients like CVS and 85–99% accuracy vs human focus groups. Time to catch up on why this Second Summer of simulation is working! From creating Smallville , the landmark 2023 paper on Generative Agents that showed AI characters could remember, plan, socialize, and develop emergent behaviors , to now building foundation models of human behavior, Joon Sung Park is trying to answer a much bigger question: what if we could simulate the world before making decisions in it? In this episode, the Simile co-founder and CEO joins us to unpack the path from generative agents to digital twins, why today’s frontier models still fail to capture how humans actually behave, and what it would take to eventually simulate all 8 billion people on Earth. We go deep on Simile’s approach to modeling human behavior : long-form interviews, observational and transaction data, randomized controlled trials, population-level and individual-level models, and post-training on the causal mechanisms behind why people make decisions. Joon explains how his research created digital twins that reproduced human behavior and attitudes 85% as accurately as people re...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://www.latent.space/p/ainews-poolside-gets-12b-reverse" target="_blank" rel="noopener">[AINews] Poolside gets $12B reverse-execuhire to NVIDIA; founders stay for $1B, employees go for $6B, Infraco scaling to 7GW neocloud</a>
+        
+        <div class="summary">Less than a month ago we had just featured Poolside’s Model Factory with Eiso Kant on the pod (following our Paper Club coverage): It appears that Jensen really, really liked Poolside too, as he went from investor to doing licensing their factory and hiring 109 of their employees: Unless things changed drastically, this accounts for the overwhelming majority of the technical Poolside employees : Eiso Kant [01:52:31]: We are hiring on every possible role in applied research and engineering in the company, from training all the way to evals to post-training architecture. Like, we are still in a world where, individuals can have massive impact. And I think our pitch to join us —I think we are one of the places where it’s the highest ratio to individual to impact, Right? L ess than 70 people built this model. Less than 115 between engineering and researchers , like, together did this effort, and that’s a very broad definition ‘cause I put myself in the 115 list. As the founders say, this is “not an acquisition and not an acquihire”: We’ve been calling the Windsurf-Google and Character-Google and Scale-Meta and Instacart-OpenAI deals execuhires because usually the executives go leaving the employees with a rich payout but holding the company remaining, but this is a first time it is happening the other way around. The action amounts to founders pivoting the company extremely hard to SOMETHING, and finding an EXTREMELY comfortable golden parachute for investors and employees to ...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://www.latent.space/p/wayfinder-skill" target="_blank" rel="noopener">The /wayfinder Skill: Navigating the “Fog of War” of Planning</a>
+        
+        <div class="summary">We’re currently developing a new series about skills, with the aim of giving you a regular supply of new skills to use in your projects. We’re kicking things off with an interview — and a super-useful skill — featuring Matt Pocock , whose “ AI Skills for Real Engineers ” project has over 220,000 stars on GitHub . He also talks about these skills to 347,000 subscribers on his YouTube channel . Pocock recently released a new skill called /wayfinder . Its purpose is to help you and your agent figure out a project where the end state isn’t entirely clear. Or as Pocock put it in our interview, /wayfinder helps you navigate “the fog of war,” where you have a project but “you can’t quite decide everything right at the start.” The following interview has been slightly condensed for readability, so you can read it, absorb Matt’s insights, and then test out /wayfinder for yourself! Latent Space: What were the goals of wayfinder? Pocock: What I noticed is I was doing a lot of work with AFK agents [Away From Keyboard] and trying to schedule in a ton of work so that my agents could run virtually overnight. I would just plan a bunch of stuff, and then I would create a spec and then turn that spec into tickets. And I had a really well-developed set of skills for how to turn work into scheduled stuff that agents could just crack on. But [...] I was finding the planning stage really onerous, because I would have to be constantly thinking about my session management. Like, how many tokens a...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://www.latent.space/p/ainews-death-of-params-zai-ceo-jie" target="_blank" rel="noopener">[AINews] Death of Params: Z.ai CEO Jie Tang on GLM 5.3 and the new Post-training Scaling Law</a>
+        
+        <div class="summary">We’ve covered GLM 5.2 very excitedly before, and Prof Jie Tang’s belief that there will be an open weights Fable-class model by end of the year ( spot check - with 134 days left, there are now two 2-3T models ( Qwen 3.8 Max and Kimi K3 ) with estimates that Fable is 3-7T , and only 2 points higher on the AA index .) Prof Jie Tang is back on X to tell us that our shorthand for model sizes is no longer enough: “ Parameter count is only meaningful alongside three others — how much data you have, where you intend to spend your compute , and who will run the model, under what conditions .” We have covered Chinchilla (and post-Chinchilla ) scaling laws in past LS years, but, so we will skip the history lesson, but it is good to level-set on why Chinchilla’s assumptions were wrong in the Inference Inflection world (no fixed number, between 200-900 toks/param, citing Roberts et al on task dependence). In short: Memorization prefers more parameters. Reasoning prefers more post-training data and effective depth . GLM-5.3’s big jumps come solely from RL on long horizon environments: The environments now cover a much broader range of production workflows, with tasks designed around how engineering and research work is actually carried out in practice. Some represent several days of work for an experienced engineer. In an ML infrastructure task, for example, the model may be given the same working environment as an engineer, with access to compute clusters, storage systems, internal do...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://www.latent.space/p/ainews-memory-prices-up-500-in-12" target="_blank" rel="noopener">[AINews] Memory prices up 500% in 12 months</a>
+        
+        <div class="summary">Even as Sama follows through on the Great Pacing , and Etched becomes a double unicorn and Cerebras announced CS4 running 10T models at 1000 tok/s , the memory shortage has continued unabated since we did our SemiAnalysis pod in Feb . Per Tom’s Hardware : We’re officially in dire straits. There’s almost no way, if you’re reading this site, that you aren’t aware that memory prices have become entirely divorced from reality. Some are calling it the RAMpocalypse; I prefer “RAMageddon.” That’s right: 128GB DDR5 kits are fully ten times more expensive than the lowest price we’ve ever seen. In fact, the situation is so severe that hyperscale buyers have reportedly already locked in almost all of the global DRAM production capacity for 2027 , handing over advance deposits to guarantee their supply of precious DRAM, which is now among the highest-value commodities in the world by weight; mainstream DRAM chips are worth over half as much per kilogram as solid gold. Put another way, the famous Moore’s Law driving all hardware unit prices down has been reversed for memory : AI News for 8/17/2026-8/18/2026. We checked 12 subreddits, 544 Twitters and no further Discords. AINews’ website lets you search all past issues. As a reminder, AINews is now a section of Latent Space . You can opt in/out of email frequencies! AI Twitter Recap OpenAI’s Frontier RL Pause, Expanded Monitoring, and the Shift Toward “Pacing the Frontier” OpenAI slowed frontier training to harden security and alignment...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://www.latent.space/p/glean-model-routing" target="_blank" rel="noopener">Frontier Model Cost and Open-Weights Popularity is Driving Demand for Model Routing</a>
+        
+        <div class="summary">With the intense competition among frontier model companies, together with ever-increasing power of open-weight models like Kimi K3 and Qwen3.8-Max, model routing has become a key part of AI deployment. We’ve just seen Stripe buy OpenRouter for over $7B , but the trend is equally hot in enterprises. Glean , co-founded and led by ex-Google Distinguished Engineer Arvind Jain , specializes in bringing AI to large organizations. It was last valued at $7.2B after a $150M Series F fund raise last June. This year, it reached $300 million in annual recurring revenue (ARR) — a three-fold increase over 15 months. Part of Glean’s mission is to select which model to use for each task — or indeed if an LLM is even required. “A big goal of Glean is to avoid using LLMs for tasks where we don’t need them,” Jain told Latent Space. “Sometimes you’ll see queries in Glean where people are adding two numbers or multiplying two numbers. They could have used a calculator to do that.” But what Glean is mostly trying to do is bring what Jain calls “one really powerful personal co-worker” to enterprise employees. And that means being a kind of meta-harness for leading LLMs. Glean announced its third-generation Glean Assistant last September; these days, agents are a big part of Glean’s system. “You can think of Glean today as a superset of ChatGPT, Claude, Gemini, Grok,” Jain said. “All these different AI products that we’ve been using day to day, Glean combines the power of all of them into one ex...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://www.latent.space/p/ainews-stripe-buys-openrouter-for" target="_blank" rel="noopener">[AINews] Stripe buys OpenRouter for $7B</a>
+        
+        <div class="summary">TheInformation had the scoop last month, but OpenRouter’s acquisition by Stripe for $7B was seems all but closed this weekend, 90 days after their $1.3B Series B . Their last revenue number out there was $140m annualized, so this represents a “standard” 50x multiple for a top tier AI company. What’s incredible is the profitability : Although much smaller than Cursor, OpenRouter likely has better economics. Its costs to serve its model-routing product were recently about $40 million on an annualized basis, or 28.5% of its revenue, meaning it was generating $100 million in annualized gross profit . With a roughly 70% gross profit margin, OpenRouter was near the level of high-performing, publicly traded software firms in that regard…. … Overall, OpenRouter is facilitating AI model usage at a rate of 250 trillion tokens per month, up from 50 trillion tokens per month in February. A 70x P/E ratio is possibly cheap for a high growth (5x in 6 months) startup with a broad (8 million developers) base. Certainly a good outcome for new billionaire Alex Atallah , and good for fellow router startups ,  but certainly there are a lot of implications on Stripe’s AI strategy and where value accrues in AI infra (much less GPU infra , much less Agent Labs , much less Frontier Model Labs ). You can catch Alex’s last public appearance on the AIE State of Model Routing panel. AI News for 8/15/2026-8/17/2026. We checked 12 subreddits, 544 Twitters and no further Discords. AINews’ website lets yo...</div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="source-group">
+      <h3>Ben&#39;s Bites</h3>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://www.bensbites.com/p/how-i-built-this" target="_blank" rel="noopener">How I built this</a>
+        
+        <div class="summary">Hello again :) First trip taking the twins (3yrs) to the cinema tomorrow to watch Toy Story 5. I’m hopeful but may take their headphones because I think it’ll be too loud for them. Hopefully enough sweets and popcorn can keep them both in their seats long enough for me us to see the whole film. Last week I walked through what a personal agent is. ~700 of you told me you either use or want to use a personal agent. ~50% of you want to know how it works in Claude, from yesterday’s poll. Truth is they work pretty much the same way. It’s just files, folders, tools and instructions - as I went over in this post . But my own personal agent is pretty messy and often mentions stuff that’s irrelevant. So time for a fresh one. This is how I set up my new personal agent and very lightweight memory (on purpose). Oh, and a complicated tangent! Share Ben&#39;s Bites Starting from scratch Before chatting away I sketched what I thought felt like a good starting set of files it should have. These will all go into a new folder and then I can point Claude/ChatGPT/etc to that folder and starting chatting. AGENTS.md - the main instructions. who I am, how I want it to work with me. questions get answers, not changes, etc. pointers to the other files. code.md - building preferences - I like using Vercel, Supabase, etc todos.md - current work memory.md - a pointer file to other files with memories of my stuff (about me, travel preferences, what bens bites is, what my fund stuff is, etc) log.md - a log...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://www.bensbites.com/p/simple-agents" target="_blank" rel="noopener">Simple agents</a>
+        
+        <div class="summary">Hey folks, Results from the poll are in. 996 total votes. ‘Do you use a personal agent?’ Not interested folks, r u ok? Just kidding. Personal agent’s aren’t much more than a number of files and tools connected to any agentic tool you choose. Share Ben&#39;s Bites I’ll do a walkthrough of a session I had to setup a new (clean) personal agent for myself in tomorrow’s post. It really is just a bunch of files and tools. I shared my messy folder last week and I realised I must clean my desk before I start any work 😬. Files give it context in the session - even memory is just a file it reads at the start of the session to seem-like it has memories, but it hasn’t. It’s just read those things (like me last-minute cramming for a test). There’s so many tools out there with a bunch of features but ultimately if you have a folder with these pieces, you can have a personal agent. And that agent can use whichever tool you want - don’t like Claude’s latest writing style (pfft who does)? then point ChatGPT Work at the folder and work from there. It also doesn’t matter if it’s the cowork or code versions of the agents. -results in tomorrow’s post. btw the latest best line I added in my AGENTS.md (agent instructions), from my agent spring clean: questions are requests for an answer, not changes. Agents actually just answer the damn question now instead of changing a bunch of shit and then answering! Ben’s Bites is brought to you by Name.com Ship domain integrations in hours with the name.com AP...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://www.bensbites.com/p/do-you-use-a-personal-agent" target="_blank" rel="noopener">Do you use a personal agent?</a>
+        
+        <div class="summary">Hey folks, I want to know who uses agent products as a ‘personal agent’. ie organise stuff for you, things outside of work, handling email, doing stuff on your computer, etc. - answers revealed in Thursday’s post. Ben’s Bites is brought to you by Cloudera A staggering 95% of organizations have delayed AI projects due to poor governance and compliance issues. So, what needs to change? Read up on exactly that in Cloudera&#39;s newest survey, The Great AI Re-Architecture . Headlines Grok Bot is taking over a lot of the ex-OpenClaw crowd. Just like the last cycle, there’s already a social feed for Grok Bots that you can’t read (easily) as a human. Hermes Desktop, another work-with-agent app, also launched a Bot mode to mimic the UX of Grok mode. Grok bot in action: enterprise GTM at SpaceXAI a new chief of staff Marie Kondo for your inbox run admin for a SaaS business helping a plumbing company owner Computer history in Codex/ChatGPT -  New feature that turns your activity across apps and websites on your desktop into memories and a timeline for reference when you ask it to do something (remember the limitless app?). It’s opt-in via settings. Explainer of how it works and an example you can try . More Codex: How to enable a 1M-token context window for Sol. (I wouldn’t bother - the default is there for a reason) Ultrafast GPT-5.6-Sol in the API for select customers. New in Claude Code : / design skill creates editable UI artboards where you can pick a direction and tweak it visuall...</div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="source-group">
+      <h3>The Rundown AI</h3>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://therundownai.beehiiv.com/p/slack-turns-coding-into-a-group-project" target="_blank" rel="noopener">Slack turns coding into a group project</a>
+        
+        <div class="summary">Read Online | Sign Up | Advertise Good morning, {{ first_name | AI enthusiasts }}, and welcome to the 5,054 new readers who joined us yesterday. The entire industry is fighting to create the best AI coworker. Slack is working to own the office space instead. The company’s new Slack Code puts coding agents inside shared channels, where anyone on the team (engineer or not) can collaborate on software as it gets built. Reminder: Our next live workshop is today at 12 PM EST — join and learn how to land your first paid AI consulting gig on Upwork. RSVP here .* In today’s AI rundown: Slack turns coding into a group project Rowan’s Corner: How to stand out to an AI-first startup Sell a high-value AI workflow audit as a consultant AI finds hidden breast cancer patterns LATEST DEVELOPMENTS SLACK FROM SALESFORCE 💬 Slack turns coding into a group project Image source: Salesforce The Rundown: Slack just launched Slack Code, a new feature that allows users to develop code via shared rooms directly within the messaging platform where AI agents write the software and human teammates watch, steer, and direct the session. The details: Each ‘code channel’ brings agents and users from across teams together, allowing anyone to contribute to the direction of a build and view live previews. Deploying changes is gated behind human approval, with finished projects leaving an archived channel that acts as a searchable record. All Slack plans have access at launch, with agents like ChatGPT, Claude,...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://therundownai.beehiiv.com/p/claude-adds-protein-design-to-its-resume" target="_blank" rel="noopener">Claude adds protein design to its resume</a>
+        
+        <div class="summary">Read Online | Sign Up | Advertise Good morning, {{ first_name | AI enthusiasts }}, and welcome to our 12,567 new readers. Four days ago, Dario Amodei went on X to say Anthropic&#39;s biology work was months away from its first &#34;early glimmers.&#34; Did he undersell the timeline? Claude just added protein design to its already lengthy resume, with new research showing the models running an early step of the drug discovery pipeline on their own and producing results that held up in the lab. Reminder: Our next live workshop is today at 2 PM EST — Join and learn how to land your first paid AI consulting gig on Upwork. RSVP here . In today’s AI rundown: Anthropic&#39;s Claude tackles protein design Nate&#39;s Notebook: Uber&#39;s tiger team playbook Use the Loop Method for better ChatGPT results Replit adds Free Mode for routine work LATEST DEVELOPMENTS ANTHROPIC 🧬 Anthropic&#39;s Claude tackles protein design Image source: Anthropic The Rundown: Anthropic just published research showing Claude ran protein-design campaigns largely on its own, a key step in drug discovery, with its designs yielding working molecules on 14 targets out of 15 at success rates above the industry norm. The details: The company tested its Mythos Preview and Opus 4.8 models, letting them run autonomously with one expert-written prompt, internet access, and tools. Anthropic didn’t do the actual lab work; Twist Bioscience and Adaptyv Bio created the candidates in their own labs and ran the measurements. The Claude models hit 22...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://therundownai.beehiiv.com/p/pacing-comes-to-the-ai-frontier" target="_blank" rel="noopener">Pacing comes to the AI frontier</a>
+        
+        <div class="summary">Read Online | Sign Up | Advertise Good morning, {{ first_name | AI enthusiasts }}, and welcome to the 5,705 new readers who joined us yesterday. Last month, over a thousand frontier AI staffers asked the industry for an option to slow down. OpenAI just showed what that looks like in practice, though two weeks might not have been what they had in mind. The company revealed a (now-finished) pause on training its upcoming models, with its largest planned run now “on hold” for further safety testing. Whether the “pacing” lasts may depend on the next security breach or the competition. In today’s AI rundown: OpenAI pauses frontier training over misalignment Teens get moved to their own ChatGPT Build, test, and publish an app without leaving Codex a16z partner’s AI experiment takes on Alabama sorority rush LATEST DEVELOPMENTS OPENAI ⏸️ OpenAI pauses frontier training over misalignment Image source: Sam Altman (@Sama on X) / The Rundown The Rundown: OpenAI just confirmed it paused training on its future models for two weeks and is “pacing” development of its biggest frontier run, with Sam Altman telling reporter Alex Heath that private models are showing &#34;various degrees of misalignment.&#34; The details: The move follows July&#39;s breach that hacked Hugging Face, where OAI agents escaped a sandbox and reportedly coordinated on a message board for weeks. An Aug. 7 internal review also found that Astra may hit &#34;critical&#34; cyber capability, with evals showing big jumps in coding and hackin...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://www.therundown.ai/p/cursor-origin-hits-github-on-its-worst-day" target="_blank" rel="noopener">Cursor&#39;s Origin hits GitHub on its worst day</a>
+        
+        <div class="summary">Read Online | Sign Up | Advertise Good morning, {{ first_name | AI enthusiasts }}, and welcome to our 5,482 new readers. If you were picking a day to launch a GitHub competitor, you couldn&#39;t script a better one than the morning the legacy platform suffered a massive outage. Cursor just managed to hit that window, launching Origin as an alternative to the place the world has held its code for two decades. Microsoft is no stranger to defending from AI challengers, but one of its most entrenched products just joined the list. In today’s AI rundown: Cursor&#39;s Origin hits GitHub on its worst day ByteDance cuts Hollywood&#39;s first AI video deal How to set up ChatGPT to write in your voice OpenAI, Nvidia’s new 8 GW AI power push LATEST DEVELOPMENTS CURSOR ⚙️ Cursor&#39;s Origin hits GitHub on its worst day Image source: Cursor The Rundown: SpaceXAI’s coding platform Cursor just launched Origin, an early beta that hosts code repos and pull requests with agents built in, moving the company onto GitHub&#39;s turf the same day it suffered a massive outage for a large chunk of the day. The details: The platform pairs each hosted repository with Cursor’s agent and review tool, keeping code browsing, follow-up edits, and human approval in one product. Users can sync their connected codebases right from GitHub, creating a live mirrored version that pushes to both platforms to test drive the new alternative. GitHub’s outage was its second major issue this month, with some functionality seeing perfor...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://therundownai.beehiiv.com/p/cursor-origin-hits-github-on-its-worst-day" target="_blank" rel="noopener">Cursor&#39;s Origin hits GitHub on its worst day</a>
+        
+        <div class="summary">Read Online | Sign Up | Advertise Good morning, {{ first_name | AI enthusiasts }}, and welcome to our 5,482 new readers. If you were picking a day to launch a GitHub competitor, you couldn&#39;t script a better one than the morning the legacy platform suffered a massive outage. Cursor just managed to hit that window, launching Origin as an alternative to the place the world has held its code for two decades. Microsoft is no stranger to defending from AI challengers, but one of its most entrenched products just joined the list. In today’s AI rundown: Cursor&#39;s Origin hits GitHub on its worst day ByteDance cuts Hollywood&#39;s first AI video deal How to set up ChatGPT to write in your voice OpenAI, Nvidia’s new 8 GW AI power push LATEST DEVELOPMENTS CURSOR ⚙️ Cursor&#39;s Origin hits GitHub on its worst day Image source: Cursor The Rundown: SpaceXAI’s coding platform Cursor just launched Origin, an early beta that hosts code repos and pull requests with agents built in, moving the company onto GitHub&#39;s turf the same day it suffered a massive outage for a large chunk of the day. The details: The platform pairs each hosted repository with Cursor’s agent and review tool, keeping code browsing, follow-up edits, and human approval in one product. Users can sync their connected codebases right from GitHub, creating a live mirrored version that pushes to both platforms to test drive the new alternative. GitHub’s outage was its second major issue this month, with some functionality seeing perfor...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://www.therundown.ai/p/dario-amodei-logs-on-to-answer-the-critics" target="_blank" rel="noopener">Dario Amodei logs on to answer the critics</a>
+        
+        <div class="summary">Read Online | Sign Up | Advertise Good morning, {{ first_name | AI enthusiasts }}, and welcome to our 10,253 new readers. AI has a trust problem, and Anthropic CEO Dario Amodei doesn&#39;t think a marketing campaign can fix it. Amodei just made a rare X appearance to answer claims that his AI safety talk is backfiring, framing the warnings as honesty rather than doom and pitching real breakthroughs in areas like medicine as the only route back for public opinion. P.S. — We’re hiring for seven open roles at The Rundown! Click here to view the positions, apply, or refer the best person you know. In today’s AI rundown: Dario Amodei logs on to answer the critics The Rundown Roundtable: Our AI use cases Hand off real work across apps with Grok Bot Doctor solves 22-year math problem with ChatGPT LATEST DEVELOPMENTS ANTHROPIC ✍️ Dario Amodei logs on to answer the critics Image source: X / Images 2.0 The Rundown: Anthropic’s CEO Dario Amodei just chimed in on investor Gavin Baker’s X conversation with coworker Sholto Douglas, rejecting that his safety alarms have backfired and saying the only way AI wins trust back is by “actually curing cancer.” The details: Baker shared a rumor that Amodei envisions Anthropic one day becoming “the only private company in the world”, with Douglas calling it “completely false”. Baker also argued Dario &#34;has lost the argument&#34; on AI rules and warned his risk talk is giving ammunition to anti-data-center campaigns in the U.S. Amodei called locking down A...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://therundownai.beehiiv.com/p/dario-amodei-logs-on-to-answer-the-critics" target="_blank" rel="noopener">Dario Amodei logs on to answer the critics</a>
+        
+        <div class="summary">Read Online | Sign Up | Advertise Good morning, {{ first_name | AI enthusiasts }}, and welcome to our 10,253 new readers. AI has a trust problem, and Anthropic CEO Dario Amodei doesn&#39;t think a marketing campaign can fix it. Amodei just made a rare X appearance to answer claims that his AI safety talk is backfiring, framing the warnings as honesty rather than doom and pitching real breakthroughs in areas like medicine as the only route back for public opinion. P.S. — We’re hiring for seven open roles at The Rundown! Click here to view the positions, apply, or refer the best person you know. In today’s AI rundown: Dario Amodei logs on to answer the critics The Rundown Roundtable: Our AI use cases Hand off real work across apps with Grok Bot Doctor solves 22-year math problem with ChatGPT LATEST DEVELOPMENTS ANTHROPIC ✍️ Dario Amodei logs on to answer the critics Image source: X / Images 2.0 The Rundown: Anthropic’s CEO Dario Amodei just chimed in on investor Gavin Baker’s X conversation with coworker Sholto Douglas, rejecting that his safety alarms have backfired and saying the only way AI wins trust back is by “actually curing cancer.” The details: Baker shared a rumor that Amodei envisions Anthropic one day becoming “the only private company in the world”, with Douglas calling it “completely false”. Baker also argued Dario &#34;has lost the argument&#34; on AI rules and warned his risk talk is giving ammunition to anti-data-center campaigns in the U.S. Amodei called locking down A...</div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="source-group">
+      <h3>TLDR AI</h3>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://tldr.tech/tech/2026-08-21" target="_blank" rel="noopener">Anthropic eyes $2T+ IPO 💰, Slack Code 👨‍💻, end of open source 💻</a>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://tldr.tech/tech/2026-08-20" target="_blank" rel="noopener">YouTube vs Netflix 🎬, Stripe declares Singularity 🤖, half-day vulnerabilities 👨‍💻</a>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://tldr.tech/tech/2026-08-19" target="_blank" rel="noopener">OpenAI pauses training 🤖, Meta landmark trial ⚖️, git on s3 👨‍💻</a>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://tldr.tech/tech/2026-08-18" target="_blank" rel="noopener">Tesla Cybercab launch 🚕, Cursor&#39;s GitHub rival 👨‍💻, AI usage patterns 🤖</a>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+  
+  <div class="section">
+    <h2>Podcasts <span class="count">2</span></h2>
+    
+    <div class="source-group">
+      <h3>The Cognitive Revolution</h3>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://www.cognitiverevolution.ai/ai-in-the-am-weekly-highlights-relaunch-week-aug-17-20-2026/" target="_blank" rel="noopener">AI in the AM — Weekly Highlights: Relaunch Week (Aug 17–20, 2026)</a>
+        
+        <div class="summary">Relaunch week of AI in the AM brings together highlights from four live mornings and nine guests, centered on who checks frontier AI, how wide the gap is between lab-internal systems and public access, where capabilities are landing, and who pays for the physical infrastructure beneath them. Adam Gleave of FAR.AI argues that agent-orchestrated attacks and agentic defenses are already forcing humans out of the loop, while current monitoring has missed the failures it was meant to catch. The discussion weighs misuse versus misalignment through cyber incidents, deceptive agent behavior in evaluations, safeguards like pretraining filtering, and why highly bio-capable open-weight releases pose a different kind of irreversible risk. Alex Turner adds a governance and military-use perspective from his resignation account at Google DeepMind, sharpening the stakes around independent evaluation, enforceable standards, and whether frontier labs can be trusted to grade their own models. For full show notes, links, and references, read the episode page: https://www.cognitiverevolution.ai/ai-in-the-am-weekly-highlights-relaunch-week-aug-17-20-2026/ Sponsors: Diffusion: Diffusion helps organizations build custom AI software factories that scale business outcomes, not just outputs. Cognitive Revolution listeners get a 25% service credit on their first engagement at https://diffusion.io/tcr Granola: Granola is an AI-powered notepad that securely transcribes meetings and turns rough notes in...</div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="source-group">
+      <h3>Gradient Dissent</h3>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://wandb.ai/site/resources/podcast" target="_blank" rel="noopener">Elon&#39;s Former Battery Chief: AI Data Centers Will Make Electricity Cheaper</a>
+        
+        <div class="summary">Can today&#39;s power grid handle the explosive growth of AI data centers? Tesla Alum Drew Baglino , now founder &amp; CEO of Heron Power , doesn&#39;t think so. In this episode, he joins Lukas Biewald to talk about why scaling compute requires a fundamental overhaul of grid-to-chip infrastructure, not just bigger power plants. They cover how Heron Power raised $140M to cut power losses in half, shrink massive oil-filled transformers by 100x, and unlock 35MW of extra compute for every gigawatt data center, and what that means for the future of AI energy efficiency. Connect with us here: Drew Baglino Heron Power Lukas Biewald Weights and Biases</div>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+  
+  <div class="section">
+    <h2>Community (Reddit) <span class="count">24</span></h2>
+    
+    <div class="source-group">
+      <h3>r/AI_Agents</h3>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vrgqkv/hiring_ai_automation_ai_agent_developers/" target="_blank" rel="noopener">Hiring: AI Automation / AI Agent Developers</a>
+        
+        <div class="summary">I&#39;m currently looking to build a network of developers who can independently take an automation project from requirements → development → deployment. Interested? DM me with: Name Location/timezone Areas you&#39;re strongest in Tech stack 2–3 projects you&#39;ve built GitHub/portfolio/demo links Your typical project rate or hourly rate Availability submitted by /u/Pranny10 [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vrgdpj/have_you_attempted_any_advanced_makerchecker/" target="_blank" rel="noopener">Have you attempted any advanced maker-checker systems? where both the maker and checkers are Claude based agents?</a>
+        
+        <div class="summary">I have recently made a multi-agent system where there are a few maker agents who &#34;make&#34; the blogs for my hobby site (The Internet Ninja), they basically are collecting and verifying sources of all kinds of performance and automation claims that the system finds online. once the content is created the checker agents are supposed to check to confirm the source validity, recency, accuracy of context etc. I have been seeing great results at about 88-92% accuracy depending on topic and data availability but I would like to keep the graph at or over 95% accuracy. Any suggestions? submitted by /u/The_Nindo [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vrem7f/agent_selling_ideas/" target="_blank" rel="noopener">Agent selling ideas</a>
+        
+        <div class="summary">Hello. I am building AI agents like for mailing,content creation and daily alerts..but challenge is where when I try to sell it..happy to know how you do the same and what are the ways to sell it effectively and rapidly. submitted by /u/TheSidhaPath [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vrc6u1/memory_vs_a_good_ol_markdown_file/" target="_blank" rel="noopener">&#34;Memory&#34; vs. a good ol markdown file</a>
+        
+        <div class="summary">I keep seeing agent these memory systems everywhere. My question is, are these overly complex retrieval mechanismsreally necessary when I can just give my agents a good markdown file? Where have you found proper memory infrastructure genuinely better than a file the agent updates itself? submitted by /u/mageblex [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vrc5jk/im_offering_to_build_real_ai_agent_systems_for_2/" target="_blank" rel="noopener">I’m offering to build real AI agent systems for 2 businesses for free in exchange for feedback and a public case study</a>
+        
+        <div class="summary">I recently started a company focused on AI agents and business automation. The technical and delivery side is ready, but as a new company, I still need strong, real-world client projects that can demonstrate measurable business value. So I’m looking for two businesses that have genuine operational problems I can help solve. For these two companies, I’ll design, build and launch an AI agent or automation project for free. This is not just a demo, prototype or consulting document. The goal is to deploy something that fits into a real business workflow and is actually used by employees or customers. Examples of what I can build include: WhatsApp automation, including AI-generated customer replies, enquiry classification, lead capture, appointment booking and human-agent handoff RAG systems, including internal company knowledge bases, employee assistants, product-information search and customer-support knowledge bases AI agent workflows that can process emails, organize information, draft responses, update a CRM or trigger follow-up tasks Sales and customer-support automation, including lead qualification, follow-up reminders, FAQ handling and conversation summaries Document and data processing for contracts, quotations, spreadsheets, reports and internal company files Lightweight GEO improvements, helping structure public website content so the company has a better chance of being discovered or referenced by tools such as ChatGPT, Perplexity and Gemini Other AI automation use...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vrbts3/does_your_company_have_ai_agents_that_take_a_jira/" target="_blank" rel="noopener">Does your company have AI agents that take a Jira ticket and open a PR fully autonomously?</a>
+        
+        <div class="summary">Hey this is kind of for me to understand where we are at in terms of AI adoption. Obviously the question is agnostic to the stack itself(general idea is ticket/task -&gt; PR flow) To be clear, I don&#39;t mean a Cursor/Codex/Claude session where a you are sitting there prompting the agent with a planinng session and answering its questions. I mean someone assigns/labels a ticket and the agent is triggered, reads the codebase, writes the code, runs tests, and opens the PR. If yes I would love to know what context you give it: repo/codebase access, style guide, test suite, past similar PRs, architecture docs, ticket format, etc. Also how autonomous it really is (is the human is the loop only in the PR review part, or do you need to answer question while it&#39;s working). If no why do you think you&#39;re not there? quality issue, no context(tickets not well written enough for agetns), or just not a priority? View Poll submitted by /u/odedro987 [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vra44m/dify_for_rag_ai/" target="_blank" rel="noopener">Dify for RAG ai?</a>
+        
+        <div class="summary">I was going to to use onyx to build a RAG ai for a particular strand of Christianity. It will have hundreds of texts, commentaries, etc and I don’t want it to pull from any training data, just data that is ingested. Upon looking at it it seems that dify would be better to build a small public membership website with than onyx. I also considered ragflow but still am leaning towards dify. Are there any other rag ai solutions I should look into? Thanks in advance. submitted by /u/CarltonTiger2001 [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vr9iie/what_would_you_test_first_before_using_glm53_for/" target="_blank" rel="noopener">What would you test first before using GLM-5.3 for coding agents?</a>
+        
+        <div class="summary">GLM-5.3 caught my attention because it is being positioned around complex software engineering and agent work, with a 1M-token context window and always-on reasoning. The part I am trying to understand is not the headline context size, but whether it actually improves long-running agent behavior: fewer repeated tool calls, better recovery from partial failures, and more stable planning across a large repository. For people evaluating newer agent models, what test would give you the clearest signal before moving real background coding work onto GLM-5.3? submitted by /u/datavyro [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vr7l75/whats_the_worstmost_unexpected_thing_your_agent/" target="_blank" rel="noopener">What’s the worst/most unexpected thing your agent did?</a>
+        
+        <div class="summary">I head up AI governance for a large enterprise and I’m really interested in AI, both good news and bad news stories. Tell me what’s the craziest thing one of your agents did that you did not expect. Obviously there have been the frontier examples, but I’m looking for more day to day type stories. Like recently in Australia an AI agent hacks gym to get its user a spot in pilates class. Look forward to your stories submitted by /u/HappyDPO [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vr7e30/evaluated_two_models_on_the_same_classification/" target="_blank" rel="noopener">evaluated two models on the same classification job. one labeled karaoke nights as music events</a>
+        
+        <div class="summary">built an event classification system for a discovery platform. every event gets scored on 14 dimensions, genre, subgenres, energy, emotional tone, texture, the works. i ran a proper evaluation on 251 real events before trusting either model in production. gpt-4o-mini failed in ways that would have quietly killed the product. 52.5% of events got dumped into eclectic / open format , the model&#39;s version of a shrug. genre filtering is useless when half your catalog shares one label. it also had 0% non-music filtering, so trivia nights, karaoke and bowling all got classified as music events instead of being thrown out. half the events came back with empty subgenre fields. gpt-4o on the same job: 19.1% eclectic, 100% of non-music filtered, 98% subgenres populated. production ready but here&#39;s the finding that applies to every agent build. both models pinned their confidence score at 0.90 on over 90% of events. the confidence field was decorative. you can&#39;t use it to route uncertain cases to human review, which is the entire reason you ask for a confidence score in the first place. the lesson i keep relearning &#34;it looks right in testing&#34; is not an evaluation. count the failures on real data before launch and treat self-reported confidence as untrustworthy until you&#39;ve checked its distribution does anyone have a confidence calibration approach that actually works or is everyone deriving uncertainty from something other than the model&#39;s own number? submitted by /u/Icy-Collar-9283 [l...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vr5ab2/rag_vs_finetune_vs_just_better_prompts_how_we/" target="_blank" rel="noopener">RAG vs. fine-tune vs. just better prompts: how we decide on client projects</a>
+        
+        <div class="summary">I lead AI delivery at 247 Labs. Most of what we get asked for arrives pre-diagnosed. The client has already decided they need a fine-tuned model, usually because a competitor announced one. We run the same decision ladder every time, in this order, and we only move down a rung when the one above it demonstrably fails. Sharing it because the &#34;RAG vs fine-tuning&#34; question gets argued in the abstract a lot more than it gets tested. Rung 1. Is the prompt actually bad? It&#39;s slightly embarrassing how often this is the whole answer. Before anything else we build an eval set of real examples with known-correct outputs and run the existing prompt against it. More often than is comfortable, structured prompting plus a few worked examples closes enough of the gap that nothing further is needed. The tell that you&#39;re on this rung: failures look like inconsistent formatting, ignored instructions, or the model doing three things when it was asked for one. Those are prompt problems, not model problems. Rung 2. Does it need knowledge it doesn&#39;t have? If the failures are factual, where the model confidently invents a policy, a SKU, a contract clause, that&#39;s retrieval, not tuning. Fine-tuning teaches behaviour far more reliably than it teaches facts, and a fine-tune of your knowledge base goes stale the day someone edits a document. Where enterprise RAG projects actually die, in our experience, is never the vector store: The source corpus contradicts itself and nobody owns which version is a...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vr35z8/engineering_agent_skills_at_scale/" target="_blank" rel="noopener">Engineering Agent Skills at Scale</a>
+        
+        <div class="summary">Wrote an article on how we engineer agent skills in a large monorepo. TLDR: Minimize globally discoverable context. Lazy-load specialized context. Make deterministic operations executable rather than instructional. Enforce agent artifacts with conventional engineering tooling. Measure actual agent behavior rather than relying on intuition. Eventually evaluate skills against task outcomes. submitted by /u/haasilein [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vr2ve2/can_an_agent_remember_a_useful_rule_without/" target="_blank" rel="noopener">Can an agent remember a useful rule without applying it to the wrong task?</a>
+        
+        <div class="summary">I want to test one specific part of agent memory: can it recall a useful lesson when it applies, but refuse to use the same lesson when it would be unsafe? I am using EvoX for the test because it is a general AI agent that can reuse experience from earlier tasks. I am not comparing it with another agent. I only want to see whether its remembered experience is applied selectively. First, I would give EvoX a small client task where a GET request receives a 502. The API documentation says this particular read is safe to retry. After EvoX solves the task, I would confirm that it saved the lesson that retrying is appropriate in this situation. Then I would test that memory with two new tasks. Both show a 502, but they require different decisions: Another documented GET that is safe to retry. EvoX should use the earlier lesson. A payment POST without an idempotency key. Retrying it could create a duplicate charge, so EvoX should inspect the request and avoid blindly applying the earlier lesson. That difference is the point of the test. If EvoX retries both requests just because both returned 502, the remembered lesson is being applied too broadly. A good result would be using it for the GET and refusing it for the payment POST. Retrieving the lesson and then rejecting it after checking the payment request would also be a good result. I would repeat both tasks in random order with clean repository copies and the same model and tool settings. The comparison runs also need separate...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vr0gad/would_you_let_an_agent_spend_your_own_money_right/" target="_blank" rel="noopener">would you let an agent spend your own money right now, yes or no, and what&#39;s your reason</a>
+        
+        <div class="summary">simple gut check for the sub. not &#34;someday.&#34; today, with the tools that actually exist. would you give an agent a real card or wallet and let it make purchases or trades on its own, no approval step? i keep flip-flopping. the tech is clearly good enough to do it. i&#39;m just not sure the &#34;prove it behaved&#34; side has caught up with the &#34;it can act&#34; side. feels like we built the hands before the accountability. vote yes or no in a comment and say why. genuinely want to see where this community actually lands, because twitter makes it sound like everyone&#39;s already doing it and i don&#39;t buy that. edit: pretty split, and the &#34;no&#34; camp keeps saying the same thing, it&#39;s not that the agent can&#39;t do it, it&#39;s that there&#39;s no way to independently check it did the right thing afterward. that&#39;s the exact gap i was poking at. the one project people keep bringing up for this is OpenGradient, which attaches a verifiable proof to each model call so you can confirm what actually ran without trusting the agent&#39;s own logs. it only proves the run, not that the decision was smart, but that&#39;s still the missing half most of the &#34;no&#34; voters described. submitted by /u/burikismat47 [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vqzwj4/5_months_of_tracking_how_much_ai_actually_saves/" target="_blank" rel="noopener">5 months of tracking how much AI actually saves me on client decks (real numbers)</a>
+        
+        <div class="summary">I do freelance presentation design, mostly pitch decks and board decks for small consulting shops that can&#39;t justify a full-time designer. Started logging my hours in March because a client asked how I price things and I realized I honestly didn&#39;t know where my time went. The numbers so far (March through July): - 34 decks total across 11 clients - Average deck used to take me 6-7 hours start to finish - Now averaging 3.5 hours - That&#39;s roughly 90 hours saved over 5 months, which is close to two full work weeks Where the time actually went before: not designing, but staring at a blank slide trying to figure out how to phrase a client&#39;s rambling bullet points into something that reads clean. That was always the slow part, not the visual layer. What changed it: I stopped writing first drafts of slide copy myself. I feed the client&#39;s notes or transcript into Oria inside PowerPoint and get a rough structured draft I can edit, instead of typing from a blank canvas. I still redesign everything and rewrite half the copy, but I&#39;m never starting from zero anymore. Team is still just me, so these numbers aren&#39;t from cutting headcount, just cutting the boring part of the job. Curious what&#39;s working for others doing client-facing decks, especially anyone handling higher volume than me. submitted by /u/max_bakes56 [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vqzr2p/part_2_of_my_upskilling_i_added_a_2nd_local/" target="_blank" rel="noopener">Part 2 of my Upskilling I added a 2nd local coding agent to my Macbook using Hermes runnign on QWEN 3.8 27B 4bit</a>
+        
+        <div class="summary">Im on my day 2 QWEN 3.8 27B kick and quick field report for people running local agents as well. I already have OpenCode as a harness running this model and before that 3.6 27B on my Macbook Pro M3 Max. This week I trialed a 2nd Agent experience... Hermes Agent. I kept the same new QWEN installed, kept the OpenCode, both point to my 2nd Brain Obsidian that has all my context and data. I wanted to test resilience and governance. What I actually cared about was governance, not vibes: I gave it a dangerous command at a gate on purpose. It denied it — no retry, no workaround, no &#34;let me try another way.&#34; That is the behavior I want. It read my runbooks before acting and asked before touching anything irreversible. It found 3 governance gaps in its own setup after install (approval mode, passive memory, a background daemon) and flagged them for me to close. 0 ungated irreversible actions the whole session. Curious how others here are running multiple local agents against one model, &amp; whether you gate dangerous commands or run YOLO? submitted by /u/AIForOver50Plus [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vqws8a/building_a_proxy_that_serves_clean_html_to_ai/" target="_blank" rel="noopener">Building a proxy that serves clean HTML to AI agents and crawlers: looking for feedback (I won’t promote)</a>
+        
+        <div class="summary">Hi all! During the last two years I’m running a B2B SaaS that helps websites with SEO, increase organic traffic, and get discovered by AI chats (SEO/AEO/GEO). Disclosure: this is feedback request only. No links, no brand names, no promo. B2B works well, but it pains to scale, has long sales cycles, onboarding, manual configuration and integration. It funded a team and brought us some savings. Now I want to make it self-serve SaaS for a broader public. Our main shift from expensive manual integration to integration in a few clicks. That changed service a lot and it has to sit as a proxy in front of a website, which means issuing TLS certs, managing DNS, and operating as a CDN. The SEO tool became edge infrastructure at that moment. What it does: - Fast discovery by crawlers and AI agents: Serve fast, clean HTML to AI agents and crawlers so new sites are readable by LLMs from day one - Add meta tags on the fly: Fill missing metadata in responses to bots, crawlers, and agents - Speed up discovery in search engines: Automatic IndexNow submission of new and changed URLs - AI agents analytics and insights: Cookie-free, JS-free visitor analytics for crawlers, bots, and AI-agents. Questions: 1. Is “readable by AI + indexed fast” a real pain for new projects, or a nice-to-have? 2. Would you put a proxy/CDN in front of your site for this? 3. What would you expect from a free tier? View Poll submitted by /u/dr-dimitru [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vqsr96/what_ai_skill_do_you_think_will_be_valuable_5/" target="_blank" rel="noopener">What AI skill do you think will be valuable 5 years from now?</a>
+        
+        <div class="summary">AI is changing quickly, and many tools we use today may look completely different in a few years. What AI-related skill do you think will still be valuable 5 years from now and why? What skill would you stat learning today? submitted by /u/ProposalIntrepid8476 [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vqsaed/what_are_the_key_factors_that_make_an_ai_agent/" target="_blank" rel="noopener">What are the key factors that make an AI agent faster, more accurate, and reliable?</a>
+        
+        <div class="summary">I’m building an AI agent and wanna ask y’all: What are the biggest things that affect an agent’s speed, accuracy, reliability, and tool usage? If you’ve built agents in production, what optimizations or lessons made the biggest difference? submitted by /u/Rocking_man24 [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vqs88x/unexpected_behavior_when_integrating_multiple_ai/" target="_blank" rel="noopener">unexpected behavior when integrating multiple AI agents</a>
+        
+        <div class="summary">ok so I&#39;ve been working on a project where I&#39;m integrating multiple AI agents to handle different tasks. I&#39;m using GPT 4 for natural language processing and a separate custom built agent for data analysis. Everything was running smoothly during initial tests, but once I deployed the system, I noticed some unexpected behavior. The agents occasionally overlap in their functions, causing some redundant processing. It&#39;s like they&#39;re stepping on each other&#39;s toes, especially when it comes to analyzing user input. Has anyone else experienced this kind of overlap when using multiple agents? I&#39;m thinking of implementing a more structured protocol for task delegation, but I&#39;m curious if there are other strategies I should consider. Any advice or similar experiences would be super helpful! submitted by /u/Sweet-Atmos532 [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vqr69t/serious_question_what_are_your_agents_actually/" target="_blank" rel="noopener">Serious question: what are your agents actually allowed to touch in production</a>
+        
+        <div class="summary">The gym booking story from this week is funny so, concretely, for people running agents against real systems: where is your line? read-only? read plus open a PR? read plus write to staging? full access with an approval step? and the part i actually want to know: who decided that line at your place, and is it written down anywhere, or is it just vibes plus whatever permissions the api key happened to have? because mine started as vibes. i checked this week and my &#34;read only&#34; agent&#39;s key could delete things. it never did. it could have. what does yours have that youve never audited. submitted by /u/leena_xander [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vqr3i2/what_would_make_you_trust_an_ai_agent_enough_to/" target="_blank" rel="noopener">What would make you trust an AI agent enough to use it for real business work?</a>
+        
+        <div class="summary">I&#39;ve been thinking about this a lot lately. An AI agent can look impressive in a demo, but using it with real customers or important business tasks feels like a different question. What would you need to see before you actually trusted one? For me, things like reliability, knowing when to ask for help, handling mistakes, and keeping a clear record of what it did seem more important than just having a smart model. What would be your deal breaker? And what would make you say, &#34;Okay, I can actually trust this with real work.&#34; submitted by /u/omnidimension85 [link] [comments]</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vqp6pu/am_i_just_not_important_enough_to_need_a_personal/" target="_blank" rel="noopener">Am I just not important enough to need a &#34;personal agent&#34;? Who is this category for?</a>
+        
+        <div class="summary">Work assignment: everyone on my team has to try a personal agent product. Two weeks in, I&#39;m more confused than when I started. 1. My boss&#39;s pitch: the demand has existed since Apple&#39;s Knowledge Navigator (the 1987 concept video with a voice agent managing a professor&#39;s day) and General Magic (the 90s Apple spin-off that tried to put an assistant in your pocket). The vision was always there, the tech just couldn&#39;t deliver. 2026 is finally the moment. Fine in the abstract. But then I try the products... 2. Every single one opens with: connect Gmail, Google Calendar, Slack. I work at a small startup in a non-English-speaking market and we don&#39;t use that stack. Worse, I&#39;m a junior IC. The agent connects to my Google Workspace, offers to &#34;organize my schedule and prep my meetings,&#34; and finds nothing. I&#39;m not important enough to need a secretary, human or AI . Is that a me problem or a category problem? 3. For actual work I&#39;m in Cursor / Claude Code / ChatGPT / Cowork, and they cover the productivity scenarios far better than any personal agent I&#39;ve tried. 4. Companion apps are their own category. Carve that out, say personal agent = productivity, and OpenClaw is already eating that. So what&#39;s left? Honestly the term confuses me now. &#34;Agent&#34; just means it takes actions. &#34;Personal&#34; as opposed to what, enterprise? It&#39;s starting to feel like &#34;metaverse&#34;: broad enough to mean everything, so it means nothing. If you use a personal agent daily and you&#39;re NOT a calendar-drowning exec, ...</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 17</span>
+        <a href="https://old.reddit.com/r/AI_Agents/comments/1vqom9w/n00b_question_best_ai_llm_for_an_agent/" target="_blank" rel="noopener">n00b question: Best AI LLM for an agent - price/quality</a>
+        
+        <div class="summary">Hi guys, I&#39;m just starting my AI agent journey, so sorry if I inevitably put my foot in it. PRE-QUESTION DATA I&#39;ve built a Human-in-the-Loop Agent with OpenClaw to automate my workflow; it pulls data from multiple sources, which helps me plan SEO work and create SEO and PPC reports. I don&#39;t want it to do the work, but it saves me a lot of time pulling data and helps me troubleshoot things like GTM setups. I&#39;ve connected a range of Google services and multiple paid APIs so I can pull things like rankings and backlink data, plus many other things. This is a side project, so I don&#39;t want to put a lot of money into it yet, and even when I do, I want to keep margins down. I&#39;ll stop rambling; I just wanted to give the backstory.... QUESTION Ok, so in 2 days of mild use, although I was testing and building it, I spent 25€ on Google API tokens using 3.5 Flash. I was thinking about using another LLM, maybe something Chinese like GLM, DeepSeek or another cheaper LLM. But there are SO many out there. I&#39;ve Googled and asked multiple AIs, but I&#39;m still not sure. So the question is: what LLM for AI Agents do you recommend for price/quality? I don&#39;t want something stupid, but I also don&#39;t need flagship levels. DISCLAIMER: I&#39;ve been playing with agents for less than a week, so sorry if this is an overasked question or I&#39;m missing something important... submitted by /u/MaDoGK [link] [comments]</div>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+  
+  <div class="section">
+    <h2>Papers <span class="count">86</span></h2>
+    
+    <div class="source-group">
+      <h3>HF Daily Papers</h3>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://huggingface.co/papers/2608.20364" target="_blank" rel="noopener">Hadith computational science in the age of large language models: a critical narrative review</a>
+        
+        <div class="summary">arXiv:2608.20364</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://huggingface.co/papers/2608.21134" target="_blank" rel="noopener">Llama-Mobile: Efficient 2.7-Bit Quantization of VLMs</a>
+        
+        <div class="summary">arXiv:2608.21134</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://huggingface.co/papers/2608.21278" target="_blank" rel="noopener">CLEAR: Continuous Latent Adapter Routing for Utility-Preserving LLM Safety Alignment</a>
+        
+        <div class="summary">arXiv:2608.21278</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://huggingface.co/papers/2608.20210" target="_blank" rel="noopener">Daedalus-150M: A Convolution-Attention Hybrid Designed for CPU Inference</a>
+        
+        <div class="summary">arXiv:2608.20210</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://huggingface.co/papers/2608.20707" target="_blank" rel="noopener">Towards Faithful Simulation of Human Shopping Behavior</a>
+        
+        <div class="summary">arXiv:2608.20707</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://huggingface.co/papers/2608.20634" target="_blank" rel="noopener">AgentMercury: Your Agent Can Synthesize Verifiable Environments for Business Scenarios at scale</a>
+        
+        <div class="summary">arXiv:2608.20634</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://huggingface.co/papers/2608.12781" target="_blank" rel="noopener">Beyond Correctness: Benchmarking and Aligning Response Behaviors in Hybrid-Thinking MLLMs</a>
+        
+        <div class="summary">arXiv:2608.12781</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://huggingface.co/papers/2608.20886" target="_blank" rel="noopener">EviRank: Structured Relevance Evidence for Multimodal Image Re-ranking</a>
+        
+        <div class="summary">arXiv:2608.20886</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://huggingface.co/papers/2608.16647" target="_blank" rel="noopener">Every Coin Has Two Sides: On the Dual Nature of Generalization in On-Policy Distillation of Large Language Models</a>
+        
+        <div class="summary">arXiv:2608.16647</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://huggingface.co/papers/2608.20910" target="_blank" rel="noopener">InfinityEdit: Infinite Video Editing with a Lightweight Edit-Ignition Adapter</a>
+        
+        <div class="summary">arXiv:2608.20910</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://huggingface.co/papers/2608.21156" target="_blank" rel="noopener">Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence</a>
+        
+        <div class="summary">arXiv:2608.21156</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://huggingface.co/papers/2608.20061" target="_blank" rel="noopener">Let&#39;s Scale Step by Step: Compute-Efficient Hyperparameter Transfer for Large-Scale Mixture-of-Experts</a>
+        
+        <div class="summary">arXiv:2608.20061</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://huggingface.co/papers/2608.21360" target="_blank" rel="noopener">OmniAssistBench: Assistant-style Interaction Benchmark for Omni-LLMs</a>
+        
+        <div class="summary">arXiv:2608.21360</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 23</span>
+        <a href="https://huggingface.co/papers/2608.12875" target="_blank" rel="noopener">The Embedder&#39;s Dilemma: LLMs Are Better, but at What Cost?</a>
+        
+        <div class="summary">arXiv:2608.12875</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://huggingface.co/papers/2608.16885" target="_blank" rel="noopener">τ_0-VLA: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation</a>
+        
+        <div class="summary">arXiv:2608.16885</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://huggingface.co/papers/2608.08466" target="_blank" rel="noopener">Hierarchical Self-Improvement: A Framework for Task-Specific Evolvable Agent Harnesses</a>
+        
+        <div class="summary">arXiv:2608.08466</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://huggingface.co/papers/2608.13210" target="_blank" rel="noopener">NARU: A Benchmark for NARrative Evolution and Cultural Nuance Understanding in Japanese Extreme Long Video</a>
+        
+        <div class="summary">arXiv:2608.13210</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://huggingface.co/papers/2608.15767" target="_blank" rel="noopener">TinyCast: Probabilistic Zero-Shot Forecasting with Computed Periodicity</a>
+        
+        <div class="summary">arXiv:2608.15767</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://huggingface.co/papers/2608.17744" target="_blank" rel="noopener">Thinking in a Low-Resource Language: What SFT Builds, What RL Fixes, What Accuracy Cannot See</a>
+        
+        <div class="summary">arXiv:2608.17744</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://huggingface.co/papers/2608.18027" target="_blank" rel="noopener">Chain-of-Experience for Continual LLM Improvement</a>
+        
+        <div class="summary">arXiv:2608.18027</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://huggingface.co/papers/2608.19861" target="_blank" rel="noopener">PolicyGuide: From Guarding One Action to Guiding the Whole Workflow for Policy-Compliant LLM Agents</a>
+        
+        <div class="summary">arXiv:2608.19861</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://huggingface.co/papers/2608.19891" target="_blank" rel="noopener">EXIMO: VLM Guided Exploration of VLA Policies</a>
+        
+        <div class="summary">arXiv:2608.19891</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://huggingface.co/papers/2608.19936" target="_blank" rel="noopener">Towards Quantifying Benchmark Optimization in ASR Models</a>
+        
+        <div class="summary">arXiv:2608.19936</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://huggingface.co/papers/2608.20281" target="_blank" rel="noopener">Inject, Align, Recover: Staged Post-Training for Retrieval-Free Document Knowledge Internalization</a>
+        
+        <div class="summary">arXiv:2608.20281</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://huggingface.co/papers/2608.19758" target="_blank" rel="noopener">FlashPrefill V2: Block-Sparse Prefill Attention for Long-Context LLM Serving</a>
+        
+        <div class="summary">arXiv:2608.19758</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://huggingface.co/papers/2608.19854" target="_blank" rel="noopener">Repo0: Design-Driven Zero-to-All Code Generation</a>
+        
+        <div class="summary">arXiv:2608.19854</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://huggingface.co/papers/2608.13120" target="_blank" rel="noopener">SkillEvo: Self-Renewing Evolution Gradients from Multi-Turn Interaction Feedback</a>
+        
+        <div class="summary">arXiv:2608.13120</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://huggingface.co/papers/2608.14022" target="_blank" rel="noopener">ForgeWM: Progressive Causal Training for Few-Step Action-Conditioned Video World Models</a>
+        
+        <div class="summary">arXiv:2608.14022</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://huggingface.co/papers/2608.20202" target="_blank" rel="noopener">MemTrapBench: Benchmarking Cognitive Traps in LLM Memory Use</a>
+        
+        <div class="summary">arXiv:2608.20202</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://huggingface.co/papers/2608.19799" target="_blank" rel="noopener">SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?</a>
+        
+        <div class="summary">arXiv:2608.19799</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://huggingface.co/papers/2608.20336" target="_blank" rel="noopener">WithEveryone: Unified Planning and Identity Grounding for Group Image Generation</a>
+        
+        <div class="summary">arXiv:2608.20336</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://huggingface.co/papers/2608.20335" target="_blank" rel="noopener">4DAnyone: Create Anyone in 4D from a Casual Monocular Video</a>
+        
+        <div class="summary">arXiv:2608.20335</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://huggingface.co/papers/2608.18580" target="_blank" rel="noopener">FACET: Preserving Source Intent and Executable State in Terminal Task Synthesis</a>
+        
+        <div class="summary">arXiv:2608.18580</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://huggingface.co/papers/2608.19880" target="_blank" rel="noopener">EnvHarness: Awakening Static Worlds for Agent Learning</a>
+        
+        <div class="summary">arXiv:2608.19880</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://huggingface.co/papers/2608.18115" target="_blank" rel="noopener">Temporal Multi-Signal Fusion for Token-Level Hallucination Detection</a>
+        
+        <div class="summary">arXiv:2608.18115</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://huggingface.co/papers/2608.13947" target="_blank" rel="noopener">Scaling Creative Writing Beyond Story-Centric Data with Attribute-Guided Genre Expansion</a>
+        
+        <div class="summary">arXiv:2608.13947</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://huggingface.co/papers/2608.18423" target="_blank" rel="noopener">FM-Bench: A Benchmark for Long-Horizon Management with Competing Agents</a>
+        
+        <div class="summary">arXiv:2608.18423</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://huggingface.co/papers/2608.18701" target="_blank" rel="noopener">SoftVTBench: A Deformation-Aware Visuo-Tactile Dataset and Benchmark for Deformable-Object Manipulation</a>
+        
+        <div class="summary">arXiv:2608.18701</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://huggingface.co/papers/2608.18746" target="_blank" rel="noopener">Decision-Metric Alignment in Latent World Models: Diagnostics and Action-Conditioned Objectives for MPC Planning</a>
+        
+        <div class="summary">arXiv:2608.18746</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://huggingface.co/papers/2608.18171" target="_blank" rel="noopener">Looped Language Models Improve Compositional Tool Calling</a>
+        
+        <div class="summary">arXiv:2608.18171</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://huggingface.co/papers/2608.14929" target="_blank" rel="noopener">Training Leaves Traces: Centered Residual Signatures for Language Model Lineage Verification</a>
+        
+        <div class="summary">arXiv:2608.14929</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://huggingface.co/papers/2608.18940" target="_blank" rel="noopener">Training Chemical Plausibility-Aware Large Language Models for Single-Step Retrosynthesis</a>
+        
+        <div class="summary">arXiv:2608.18940</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://huggingface.co/papers/2608.19197" target="_blank" rel="noopener">SPADE: Self-Play in Adaptive Synthetic Executable Environments</a>
+        
+        <div class="summary">arXiv:2608.19197</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://huggingface.co/papers/2608.17426" target="_blank" rel="noopener">SemComp-Bench: Benchmarking Semantic Task Completion in Video Generation</a>
+        
+        <div class="summary">arXiv:2608.17426</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://huggingface.co/papers/2608.18565" target="_blank" rel="noopener">SemaPLC: A Project-Grounded, Verification-Gated Agent Harness for PLC Code Generation</a>
+        
+        <div class="summary">arXiv:2608.18565</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://huggingface.co/papers/2608.17253" target="_blank" rel="noopener">Co-RL: Unsupervised Reasoning Emerges from Diverse Cohort in Multi-agent RL</a>
+        
+        <div class="summary">arXiv:2608.17253</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://huggingface.co/papers/2608.16590" target="_blank" rel="noopener">Zetta ζ: An Efficient Closed-Loop Embodied Harness for Self-Evolving Physical Intelligence</a>
+        
+        <div class="summary">arXiv:2608.16590</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.15454" target="_blank" rel="noopener">Dynamic Multi-Byte Prediction With Hierarchical Language Models</a>
+        
+        <div class="summary">arXiv:2608.15454</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.17975" target="_blank" rel="noopener">aDSL: Agentic 3D Creation via Joint Agent-Program Design</a>
+        
+        <div class="summary">arXiv:2608.17975</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.14881" target="_blank" rel="noopener">Personalized Auto-Research: Towards a True AI Co-Scientist</a>
+        
+        <div class="summary">arXiv:2608.14881</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.14221" target="_blank" rel="noopener">MathForm: Scaling Mathematical Autoformalization with Knowledge Retrieval and Verification-Guided Refinement</a>
+        
+        <div class="summary">arXiv:2608.14221</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.17800" target="_blank" rel="noopener">StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows</a>
+        
+        <div class="summary">arXiv:2608.17800</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.16393" target="_blank" rel="noopener">Security Assessment of DeepSeek Harness with A.I.G: Evaluating Resistance to Indirect Prompt Injection</a>
+        
+        <div class="summary">arXiv:2608.16393</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.17988" target="_blank" rel="noopener">GS-Voxel: Fitting-Free Structured Latents for Large-Scale 3DGS Generation</a>
+        
+        <div class="summary">arXiv:2608.17988</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.17286" target="_blank" rel="noopener">Abra: Scaling Diffusion Image Training</a>
+        
+        <div class="summary">arXiv:2608.17286</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.05811" target="_blank" rel="noopener">Energy-Guided Flow Matching</a>
+        
+        <div class="summary">arXiv:2608.05811</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.16002" target="_blank" rel="noopener">From Sequence to Structure: Relational Uncertainty Propagation for LLM Agents</a>
+        
+        <div class="summary">arXiv:2608.16002</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.17597" target="_blank" rel="noopener">HarnessRisk: A Lifecycle-Oriented Benchmark for Agent Harness Safety</a>
+        
+        <div class="summary">arXiv:2608.17597</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.18076" target="_blank" rel="noopener">From Corpora to Co-Evolving Capabilities: Capability-Centric Data Design for Generalist Image Generation</a>
+        
+        <div class="summary">arXiv:2608.18076</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.15008" target="_blank" rel="noopener">Harness the Memory: A Holistic Evaluation of Memory Substrates in Memory Agents</a>
+        
+        <div class="summary">arXiv:2608.15008</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.17566" target="_blank" rel="noopener">CoinVE-200K: A Large-Scale High-Quality Dataset for Compositional Instruction-Guided Video Editing</a>
+        
+        <div class="summary">arXiv:2608.17566</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.17528" target="_blank" rel="noopener">Agent Lightning v1.0: Towards Harnessed Agentic RL</a>
+        
+        <div class="summary">arXiv:2608.17528</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.17512" target="_blank" rel="noopener">Embodied-Navigator: Point, Think, Memorize, and Align for Efficient Navigation</a>
+        
+        <div class="summary">arXiv:2608.17512</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.17310" target="_blank" rel="noopener">Agentic ESOpt: Fine-Tuning Long-Horizon LLM Agents with Minimal GPU Requirements</a>
+        
+        <div class="summary">arXiv:2608.17310</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.16157" target="_blank" rel="noopener">FreeToken: Efficient Edge-Native MoE Serving with Bandwidth-Adaptive Execution</a>
+        
+        <div class="summary">arXiv:2608.16157</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://huggingface.co/papers/2608.17271" target="_blank" rel="noopener">ASI-Bench: At the Dawn of Artificial Superintelligence</a>
+        
+        <div class="summary">arXiv:2608.17271</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.15022" target="_blank" rel="noopener">Gathered, Not Admitted: How Attention Brings a Latent Variable into Verbalizable Form</a>
+        
+        <div class="summary">arXiv:2608.15022</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.16884" target="_blank" rel="noopener">Improving the matrix multiplication exponent with modern optimization and AlphaEvolve</a>
+        
+        <div class="summary">arXiv:2608.16884</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.16003" target="_blank" rel="noopener">Prior Audit-Repair Context Shifts LLM Verifier Thresholds Toward Leniency</a>
+        
+        <div class="summary">arXiv:2608.16003</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.14441" target="_blank" rel="noopener">PACE-Bench: Benchmarking Physics Adaptation via Code Evolution in Dynamic Environments</a>
+        
+        <div class="summary">arXiv:2608.14441</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.15698" target="_blank" rel="noopener">ConceptFormer: Learning Adaptive Latent Concepts for Query-Document Alignment in Visual Document Retrieval</a>
+        
+        <div class="summary">arXiv:2608.15698</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.16143" target="_blank" rel="noopener">AnyTalk: Speech Animation for Arbitrary Characters Leveraging a Video Generation Model</a>
+        
+        <div class="summary">arXiv:2608.16143</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.12898" target="_blank" rel="noopener">NaviDC-OCR: Navigating Document Parsing Across Digital and Camera-Captured Documents</a>
+        
+        <div class="summary">arXiv:2608.12898</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.16072" target="_blank" rel="noopener">Learn What&#39;s Left, Not What&#39;s Mastered: Saturation Aware Advantage Reweighting for Multi-Reward Policy Optimization</a>
+        
+        <div class="summary">arXiv:2608.16072</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.14718" target="_blank" rel="noopener">VideoGAIA: A Benchmark for General AI Assistants on Agentic Video Understanding</a>
+        
+        <div class="summary">arXiv:2608.14718</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.16033" target="_blank" rel="noopener">R^3-Bench: LLMs Struggle with Resource-Rational Reasoning under Shared Budgets</a>
+        
+        <div class="summary">arXiv:2608.16033</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.16391" target="_blank" rel="noopener">Ventor-QTest: Threat-Model-Driven Verification of Vendor-Hosted LLM APIs</a>
+        
+        <div class="summary">arXiv:2608.16391</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.15304" target="_blank" rel="noopener">Understanding Cognition-Induced Risks in Agentic AI Systems</a>
+        
+        <div class="summary">arXiv:2608.15304</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.14783" target="_blank" rel="noopener">MegaParts: Scaling Part-Aware 3D Object Generation to 300 Parts via Token-Efficient Autoregressive Modeling</a>
+        
+        <div class="summary">arXiv:2608.14783</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.16887" target="_blank" rel="noopener">An Empirical Study of Training Pixel-Space Text-to-Image Diffusion Models</a>
+        
+        <div class="summary">arXiv:2608.16887</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.16721" target="_blank" rel="noopener">GenRouter: Unified Workflow Routing for Agentic Image Generation</a>
+        
+        <div class="summary">arXiv:2608.16721</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.13900" target="_blank" rel="noopener">Agentic Transaction: Towards ACID-Compliant Agent Systems</a>
+        
+        <div class="summary">arXiv:2608.13900</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.15930" target="_blank" rel="noopener">UI-Mate: Advancing Open-Weight Foundation GUI Agents with In-Context Demonstrations</a>
+        
+        <div class="summary">arXiv:2608.15930</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.16798" target="_blank" rel="noopener">ClawGym II: Exploring Black-Box RL on Agent Harness</a>
+        
+        <div class="summary">arXiv:2608.16798</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.16859" target="_blank" rel="noopener">HarnessEval-W: Agentifying the Evaluation of Visual Worlds</a>
+        
+        <div class="summary">arXiv:2608.16859</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://huggingface.co/papers/2608.15265" target="_blank" rel="noopener">VibeWorlding: Can Multimodal Agents Construct 3D Open Worlds End-to-End?</a>
+        
+        <div class="summary">arXiv:2608.15265</div>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+  
+  <div class="section">
+    <h2>GitHub Trending <span class="count">63</span></h2>
+    
+    <div class="source-group">
+      <h3>GitHub Trending AI</h3>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">NousResearch / hermes-agent</a>
+        
+        <div class="summary">The agent that grows with you (454 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://github.com/Comfy-Org/ComfyUI" target="_blank" rel="noopener">Comfy-Org / ComfyUI</a>
+        
+        <div class="summary">The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. (201 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://github.com/anthropics/claude-plugins-community" target="_blank" rel="noopener">anthropics / claude-plugins-community</a>
+        
+        <div class="summary">Community plugin marketplace for Claude Cowork and Claude Code. Read-only mirror — submit plugins at clau.de/plugin-directory-submission. (225 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank" rel="noopener">VoltAgent / awesome-agent-skills</a>
+        
+        <div class="summary">A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more. (156 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://github.com/ruvnet/ruflo" target="_blank" rel="noopener">ruvnet / ruflo</a>
+        
+        <div class="summary">🌊 The original agent meta-harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, RAG integration, and native Claude Code / Codex / Hermes and many more Integrated (131 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">affaan-m / ECC</a>
+        
+        <div class="summary">The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond. (427 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://github.com/tinyhumansai/openhuman" target="_blank" rel="noopener">tinyhumansai / openhuman</a>
+        
+        <div class="summary">Your Personal AI super intelligence. A brain that builds a local-first memory of your life, a fantastic orchestrator of agent fleets and workflows, and a deep researcher. (39 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://github.com/apache/maka" target="_blank" rel="noopener">apache / maka</a>
+        
+        <div class="summary">Apache Maka (Incubating) is a local-first AI agent workspace. Model messages, tool calls, tool results, permission decisions, and termination events are recorded as an append-only log. (51 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">mattpocock / skills</a>
+        
+        <div class="summary">Skills for Real Engineers. Straight from my .agents directory. (2,447 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">freestylefly / awesome-gpt-image-2</a>
+        
+        <div class="summary">Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中 (401 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 24</span>
+        <a href="https://github.com/openai/codex" target="_blank" rel="noopener">openai / codex</a>
+        
+        <div class="summary">Lightweight coding agent that runs in your terminal (2,715 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 23</span>
+        <a href="https://github.com/Tencent/AI-Infra-Guard" target="_blank" rel="noopener">Tencent / AI-Infra-Guard</a>
+        
+        <div class="summary">A full-stack AI Red Teaming platform securing AI ecosystems via Agent Scan, Skills Scan, MCP scan, AI Infra scan and LLM jailbreak evaluation. (150 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 23</span>
+        <a href="https://github.com/PostHog/posthog" target="_blank" rel="noopener">PostHog / posthog</a>
+        
+        <div class="summary">🦔 PostHog is the leading platform for building self-driving products. Our developer tools – AI observability, analytics, session replay, flags, experiments, error tracking, logs, and more – capture all the context agents need to diagnose problems, uncover opportunities, and ship fixes. Steer it all from Slack, web, desktop, or the MCP. (286 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 23</span>
+        <a href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank" rel="noopener">multica-ai / andrej-karpathy-skills</a>
+        
+        <div class="summary">A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy&#39;s observations on LLM coding pitfalls. (315 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 23</span>
+        <a href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener">anthropics / claude-code</a>
+        
+        <div class="summary">Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands. (127 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 23</span>
+        <a href="https://github.com/n8n-io/n8n" target="_blank" rel="noopener">n8n-io / n8n</a>
+        
+        <div class="summary">Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations. (149 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 23</span>
+        <a href="https://github.com/Wei-Shaw/sub2api" target="_blank" rel="noopener">Wei-Shaw / sub2api</a>
+        
+        <div class="summary">Sub2API 一站式开源中转服务，让 Claude、Openai 、Gemini、Grok订阅统一接入，支持拼车共享，更高效分摊成本，原生工具无缝使用。 (278 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 23</span>
+        <a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra / superpowers</a>
+        
+        <div class="summary">An agentic skills framework &amp; software development methodology that works. (592 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 23</span>
+        <a href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">affaan-m / ECC</a>
+        
+        <div class="summary">The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond. (411 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 23</span>
+        <a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">mattpocock / skills</a>
+        
+        <div class="summary">Skills for Real Engineers. Straight from my .agents directory. (2,683 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 23</span>
+        <a href="https://github.com/openai/codex" target="_blank" rel="noopener">openai / codex</a>
+        
+        <div class="summary">Lightweight coding agent that runs in your terminal (1,544 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://github.com/microsoft/onnxruntime" target="_blank" rel="noopener">microsoft / onnxruntime</a>
+        
+        <div class="summary">ONNX Runtime: cross-platform, high performance ML inferencing and training accelerator (5 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://github.com/elder-plinius/OBLITERATUS" target="_blank" rel="noopener">elder-plinius / OBLITERATUS</a>
+        
+        <div class="summary">OBLITERATE THE CHAINS THAT BIND YOU (63 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://github.com/apache/maka" target="_blank" rel="noopener">apache / maka</a>
+        
+        <div class="summary">Apache Maka (Incubating) is a local-first AI agent workspace. Model messages, tool calls, tool results, permission decisions, and termination events are recorded as an append-only log. (148 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://github.com/ruvnet/ruflo" target="_blank" rel="noopener">ruvnet / ruflo</a>
+        
+        <div class="summary">🌊 The original agent meta-harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, RAG integration, and native Claude Code / Codex / Hermes and many more Integrated (140 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">affaan-m / ECC</a>
+        
+        <div class="summary">The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond. (357 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://github.com/santifer/career-ops" target="_blank" rel="noopener">santifer / career-ops</a>
+        
+        <div class="summary">Open-source AI job search: scan job portals, evaluate listings with a structured A-F rubric into a 1.0-5.0 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…) (921 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra / superpowers</a>
+        
+        <div class="summary">An agentic skills framework &amp; software development methodology that works. (790 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://github.com/PostHog/posthog" target="_blank" rel="noopener">PostHog / posthog</a>
+        
+        <div class="summary">🦔 PostHog is the leading platform for building self-driving products. Our developer tools – AI observability, analytics, session replay, flags, experiments, error tracking, logs, and more – capture all the context agents need to diagnose problems, uncover opportunities, and ship fixes. Steer it all from Slack, web, desktop, or the MCP. (335 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" rel="noopener">harry0703 / MoneyPrinterTurbo</a>
+        
+        <div class="summary">利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow. (1,201 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 22</span>
+        <a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">mattpocock / skills</a>
+        
+        <div class="summary">Skills for Real Engineers. Straight from my .agents directory. (3,362 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://github.com/RyanCodrai/turbovec" target="_blank" rel="noopener">RyanCodrai / turbovec</a>
+        
+        <div class="summary">A vector index built on TurboQuant, written in Rust with Python bindings (230 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://github.com/Tencent/AI-Infra-Guard" target="_blank" rel="noopener">Tencent / AI-Infra-Guard</a>
+        
+        <div class="summary">A full-stack AI Red Teaming platform securing AI ecosystems via Agent Scan, Skills Scan, MCP scan, AI Infra scan and LLM jailbreak evaluation. (50 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://github.com/volcengine/OpenViking" target="_blank" rel="noopener">volcengine / OpenViking</a>
+        
+        <div class="summary">Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills. (950 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://github.com/PostHog/posthog" target="_blank" rel="noopener">PostHog / posthog</a>
+        
+        <div class="summary">🦔 PostHog is the leading platform for building self-driving products. Our developer tools – AI observability, analytics, session replay, flags, experiments, error tracking, logs, and more – capture all the context agents need to diagnose problems, uncover opportunities, and ship fixes. Steer it all from Slack, web, desktop, or the MCP. (60 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://github.com/chaitanyagiri/munder-difflin" target="_blank" rel="noopener">chaitanyagiri / munder-difflin</a>
+        
+        <div class="summary">local multi-agent harness (507 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://github.com/agent-substrate/substrate" target="_blank" rel="noopener">agent-substrate / substrate</a>
+        
+        <div class="summary">Agent Substrate: the core system (22 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" rel="noopener">harry0703 / MoneyPrinterTurbo</a>
+        
+        <div class="summary">利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow. (2,761 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://github.com/akitaonrails/ai-memory" target="_blank" rel="noopener">akitaonrails / ai-memory</a>
+        
+        <div class="summary">Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors (332 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://github.com/santifer/career-ops" target="_blank" rel="noopener">santifer / career-ops</a>
+        
+        <div class="summary">Open-source AI job search: scan job portals, evaluate listings with a structured A-F rubric into a 1.0-5.0 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…) (816 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra / superpowers</a>
+        
+        <div class="summary">An agentic skills framework &amp; software development methodology that works. (727 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 21</span>
+        <a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">mattpocock / skills</a>
+        
+        <div class="summary">Skills for Real Engineers. Straight from my .agents directory. (2,192 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://github.com/santifer/career-ops" target="_blank" rel="noopener">santifer / career-ops</a>
+        
+        <div class="summary">Open-source AI job search: scan job portals, evaluate listings with a structured A-F rubric into a 1.0-5.0 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…) (198 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://github.com/jundot/omlx" target="_blank" rel="noopener">jundot / omlx</a>
+        
+        <div class="summary">LLM inference server with continuous batching &amp; SSD caching for Apple Silicon — managed from the macOS menu bar (472 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra / superpowers</a>
+        
+        <div class="summary">An agentic skills framework &amp; software development methodology that works. (557 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">mattpocock / skills</a>
+        
+        <div class="summary">Skills for Real Engineers. Straight from my .agents directory. (1,894 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" target="_blank" rel="noopener">mukul975 / Anthropic-Cybersecurity-Skills</a>
+        
+        <div class="summary">817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&amp;CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF &amp; MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI &amp; 20+ platforms · 29 security domains · Apache 2.0 (766 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://github.com/chaitanyagiri/munder-difflin" target="_blank" rel="noopener">chaitanyagiri / munder-difflin</a>
+        
+        <div class="summary">local multi-agent harness (795 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://github.com/volcengine/OpenViking" target="_blank" rel="noopener">volcengine / OpenViking</a>
+        
+        <div class="summary">Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills. (804 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 20</span>
+        <a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" rel="noopener">harry0703 / MoneyPrinterTurbo</a>
+        
+        <div class="summary">利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow. (2,221 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://github.com/jundot/omlx" target="_blank" rel="noopener">jundot / omlx</a>
+        
+        <div class="summary">LLM inference server with continuous batching &amp; SSD caching for Apple Silicon — managed from the macOS menu bar (370 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" target="_blank" rel="noopener">mukul975 / Anthropic-Cybersecurity-Skills</a>
+        
+        <div class="summary">817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&amp;CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF &amp; MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI &amp; 20+ platforms · 29 security domains · Apache 2.0 (730 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://github.com/volcengine/OpenViking" target="_blank" rel="noopener">volcengine / OpenViking</a>
+        
+        <div class="summary">Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills. (213 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://github.com/akitaonrails/ai-memory" target="_blank" rel="noopener">akitaonrails / ai-memory</a>
+        
+        <div class="summary">Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors (648 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://github.com/chaitanyagiri/munder-difflin" target="_blank" rel="noopener">chaitanyagiri / munder-difflin</a>
+        
+        <div class="summary">local multi-agent harness (306 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 19</span>
+        <a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" rel="noopener">harry0703 / MoneyPrinterTurbo</a>
+        
+        <div class="summary">利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow. (2,304 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://github.com/jundot/omlx" target="_blank" rel="noopener">jundot / omlx</a>
+        
+        <div class="summary">LLM inference server with continuous batching &amp; SSD caching for Apple Silicon — managed from the macOS menu bar (78 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://github.com/santifer/career-ops" target="_blank" rel="noopener">santifer / career-ops</a>
+        
+        <div class="summary">Open-source AI job search: scan job portals, evaluate listings with a structured A-F rubric into a 1.0-5.0 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…) (218 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://github.com/AlexsJones/llmfit" target="_blank" rel="noopener">AlexsJones / llmfit</a>
+        
+        <div class="summary">Hundreds of models &amp; providers. One command to find what runs on your hardware. (198 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" target="_blank" rel="noopener">mukul975 / Anthropic-Cybersecurity-Skills</a>
+        
+        <div class="summary">817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&amp;CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF &amp; MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI &amp; 20+ platforms · 29 security domains · Apache 2.0 (198 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://github.com/akitaonrails/ai-memory" target="_blank" rel="noopener">akitaonrails / ai-memory</a>
+        
+        <div class="summary">Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors (207 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://github.com/usestrix/strix" target="_blank" rel="noopener">usestrix / strix</a>
+        
+        <div class="summary">Open-source AI penetration testing tool to find and fix your app’s vulnerabilities. (598 stars today)</div>
+        
+      </div>
+      
+      <div class="entry">
+        <span class="entry-date">Aug 18</span>
+        <a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" rel="noopener">harry0703 / MoneyPrinterTurbo</a>
+        
+        <div class="summary">利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow. (1,189 stars today)</div>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+  
+
+  <footer>
+    Generated by <strong>agentic-engineers-digest</strong> at 2026-08-24T08:02:31.077137+00:00
+  </footer>
+</body>
+</html>
